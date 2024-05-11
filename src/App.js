@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import NavBar from "./comps/navbar";
+import Start from "./pages/Startsection";
+// import mouse from "./assests/icon/mouse.svg";
+// import Link from "react";
+import "./index.css";
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="MAIN">
+      <NavBar />
+
+      <Start />
+      <section className="project__section" id="#Project"></section>
+      <section className="about__section" id="#About"></section>
+      <section className="contact__section" id="#Contact"></section>
+    </main>
   );
 }
-
-export default App;
