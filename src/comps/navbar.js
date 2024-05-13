@@ -1,12 +1,15 @@
+import { useState } from "react";
+
 function NavBar() {
+  const [active, setActive] = useState(false);
   return (
-    <nav className="navbar-box">
-      <div className="name-logo">
-        <span> &lt;</span>
+    <nav className=" flex align-center navbar-box">
+      <div className=" flex align-center ff-inter">
+        <span className="lessthan">&lt;</span>
         <h1 className="heading">HarisH</h1>
-        <span>&#47;&gt;</span>
+        <span className="lessthan">&#47;&gt;</span>
       </div>
-      <ul className="navbar__options">
+      <ul className="navbar__options flex">
         <li className="navbar__option">
           Start<span>&#47;&gt;</span>
         </li>
@@ -20,6 +23,15 @@ function NavBar() {
           Contact<span>&#47;&gt;</span>
         </li>
       </ul>
+      <button
+        className={`hamburger-btn ${active ? "active" : ""}`}
+        onClick={() => setActive(!active)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div className={`background-main ${active ? "active" : ""}`}></div>
     </nav>
   );
 }

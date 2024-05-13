@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
-/* front-1  font-family: 'Roboto Condensed'; */
-/* front-2  font-family: "Inter", sans-serif; */
-
 :root {
   --blue: rgb(68, 94, 242);
   --primary: #8036e7;
@@ -13,6 +10,7 @@
   --contact-background: #0e0d10;
   --ff-size-4rem: 4rem;
   --ff-size-2rem: 2rem;
+  --ff-size-3rem: 3rem;
 }
 
 * {
@@ -29,12 +27,33 @@ body {
   min-height: 100vh;
   width: 100%;
 }
+
+/* utility classes */
 .color-purple {
   color: var(--primary) !important;
 }
-.satcify {
+.ff-satcify {
   font-family: "Satisfy", cursive;
 }
+.ff-Robot {
+  font-family: "Roboto Condensed";
+}
+.ff-inter {
+  font-family: "Inter", sans-serif;
+}
+.flex {
+  display: flex !important;
+}
+.justify-center {
+  justify-content: center !important;
+}
+.align-center {
+  align-items: center !important;
+}
+.m-100vh {
+  min-height: 100vh;
+}
+
 main {
   min-height: 100vh;
   width: 100%;
@@ -44,33 +63,25 @@ main {
   position: fixed;
   width: 100%;
   height: 5rem;
-  display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: 3rem 2rem;
-  z-index: 100;
+  z-index: 99;
 }
 .heading {
-  font-size: var(--ff-size-4rem);
+  font-size: 4rem;
   color: white;
   margin-inline: 0.5rem;
 }
-.name-logo {
-  font-family: "Inter", sans-serif;
-  display: flex;
-  align-items: center;
-}
-.name-logo span {
+.lessthan {
   color: var(--blue);
   font-size: 2.5rem;
   font-family: 400;
 }
 .navbar__options {
-  display: flex;
   justify-content: space-between;
   gap: 3rem;
   color: white;
-  font-size: var(--ff-size-2rem);
+  font-size: 2rem;
 }
 .navbar__option {
   font-family: "Roboto Condensed";
@@ -86,29 +97,99 @@ main {
   color: hsla(0, 0%, 100%, 0.5);
 }
 
-/* start */
+.hamburger-btn {
+  display: none;
+  width: 5rem;
+  height: 3rem;
+  background-color: var(--web-background);
+  border: 0.5px solid #181325;
+  border-radius: 2px;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  z-index: 1002;
+}
+.hamburger-btn span {
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  background-color: var(--blue);
+  margin: 0 auto;
+}
+.hamburger-btn span:nth-child(2) {
+  margin: 7px auto;
+}
+
+.hamburger-btn.active span:first-child {
+  transform: rotate(135deg) translate(6px, -6px);
+}
+.hamburger-btn.active span:nth-child(2) {
+  opacity: -1;
+}
+.hamburger-btn.active span:last-child {
+  transform: rotate(-135deg) translate(6px, 6px);
+}
+.background-main {
+  display: none;
+  position: fixed;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--web-background);
+  right: 3.5rem;
+  top: 2rem;
+  border-radius: 50%;
+  z-index: 1000;
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.background-main.active {
+  transform: scale(100);
+}
+/* start section */
 
 .Start__section {
-  min-height: 100vh;
   background-image: url(/src/assests/bg-start.webp);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
   padding: 7rem 3rem;
   width: 100%;
-  display: flex;
-  align-items: center;
-  position: relative;
+  height: 100vh;
   min-height: 63rem;
+  margin: 0 auto;
+  overflow: hidden;
+  z-index: 10;
+  position: relative;
+}
+.row {
+  font-family: "Roboto Condensed";
+  padding-inline: 1rem;
+  flex: initial !important;
+  align-self: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.col-7 {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+.intro__article {
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  min-height: min-content;
+  display: block;
 }
 .timeline {
+  height: 300%;
+  left: -10px;
   position: absolute;
-  bottom: 0;
+  top: 11px;
   width: 1px;
-  height: 66%;
-  left: 20%;
-  top: 34%;
+  z-index: 9;
   background-color: var(--primary);
-  max-height: 80%;
 }
 .ellipse {
   height: 1rem;
@@ -117,6 +198,7 @@ main {
   border-radius: 50%;
   transform: translate(-4.5px, -6px);
   position: relative;
+  z-index: 9;
 }
 .ellipse::before {
   content: "";
@@ -132,15 +214,15 @@ main {
 .start {
   font-family: "Roboto Condensed";
   color: #727272;
-  font-size: 1.3rem;
+  font-size: 1.7rem;
 }
 .scroll-box {
   position: absolute;
-  bottom: 21%;
-  left: 19.45%;
+  top: 300px;
   z-index: 3;
   height: 4rem;
   text-decoration: none;
+  margin-left: -7px;
   transition: transform 0.3s;
 }
 .mouse-icon {
@@ -148,54 +230,41 @@ main {
   height: 2.5rem;
 }
 .scoll {
+  position: absolute;
   font-family: "Roboto Condensed";
   transform: rotate(-90deg) translate(-25px, -18px);
   background-color: #0e0d10b6;
   z-index: 3;
   font-size: 1.6rem;
 }
-.scoll:active {
+.scoll:active,
+.scoll:link {
   color: var(--primary);
 }
 .scroll-box:hover {
-  transform: scale(1.2) translate(3px, 1px);
+  transform: scale3d(1.1, 1.1, 1);
+  margin-left: -7px;
 }
-.intro__article {
-  flex: initial !important;
-  justify-self: center;
-  align-items: center;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -15px;
-  margin-right: -15px;
-  height: 30rem;
-  flex-shrink: 0;
-}
-.row {
-  margin-inline: auto;
-  font-family: "Roboto Condensed";
-  padding-inline: 1rem;
-}
+
 .intro__hi {
   color: white;
-  font-size: 5rem;
+  font-size: var(--ff-size-4rem);
   margin-top: 2rem;
 }
 .intro__friend {
   color: white;
-  font-size: 3.14rem;
+  font-size: var(--ff-size-4rem);
   margin-top: 1rem;
 }
 .into__letme {
   margin-top: 3rem;
-  font-size: 3rem;
+  font-size: var(--ff-size-3rem);
   color: var(--lite-gray);
 }
 .project__section {
   height: 100vh;
   width: 100%;
-  background-color: var(--web-background);
+  background-image: url(/src/assests/bg-project.webp);
   background-size: cover;
 }
 .about__section {
@@ -207,4 +276,28 @@ main {
   height: 100vh;
   width: 100%;
   background-color: var(--contact-background);
+}
+
+@media only screen and (max-width: 1023px) {
+  :root {
+    --ff-size-4rem: 3.5rem;
+    --ff-size-2rem: 1.5rem;
+    --ff-size-3rem: 2.5rem;
+  }
+}
+@media only screen and (max-width: 860px) {
+  :root {
+    --ff-size-4rem: 3rem;
+    --ff-size-2rem: 1rem;
+    --ff-size-3rem: 2rem;
+  }
+  .navbar__options {
+    display: none !important;
+  }
+  .hamburger-btn {
+    display: initial;
+  }
+  .background-main {
+    display: block;
+  }
 }
