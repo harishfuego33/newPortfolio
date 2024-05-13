@@ -53,6 +53,9 @@ body {
 .m-100vh {
   min-height: 100vh;
 }
+.flex-row {
+  flex-direction: row;
+}
 
 main {
   min-height: 100vh;
@@ -84,7 +87,6 @@ main {
   font-size: 2rem;
 }
 .navbar__option {
-  font-family: "Roboto Condensed";
   list-style: none;
   height: inherit;
   cursor: pointer;
@@ -106,7 +108,7 @@ main {
   border-radius: 2px;
   padding: 0.5rem;
   transition: all 0.3s ease;
-  z-index: 1002;
+  z-index: 1500;
 }
 .hamburger-btn span {
   display: block;
@@ -133,7 +135,7 @@ main {
   position: fixed;
   width: 2rem;
   height: 2rem;
-  background-color: var(--web-background);
+  background-color: var(--about-background);
   right: 3.5rem;
   top: 2rem;
   border-radius: 50%;
@@ -143,7 +145,46 @@ main {
 .background-main.active {
   transform: scale(100);
 }
-/* start section */
+.navbar__center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+  z-index: 1003;
+}
+.navbar__center-option {
+  list-style: none;
+  color: white;
+  font-size: var(--ff-size-3rem);
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: translateX(-70%);
+  text-align: center;
+}
+.navbar__link {
+  text-decoration: none;
+  display: inline-block;
+  width: 10rem;
+  background-image: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    var(--web-background) 50%
+  );
+  background-size: 220%;
+  color: white;
+  transition: all 0.5s;
+}
+.navbar__link:hover {
+  background-position: 100%;
+  color: var(--primary);
+}
+.navbar__center-option.active {
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: translateX(0%);
+}
 
 .Start__section {
   background-image: url(/src/assests/bg-start.webp);
