@@ -2,34 +2,35 @@ import { useEffect, useState } from "react";
 import mouse from "../assests/icon/mouse.svg";
 export default function Start() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [text1, setText1] = useState(false);
-  const [text2, setText2] = useState(false);
-  const [text3, setText3] = useState(false);
-  const [text4, setText4] = useState(false);
-  useEffect(() => {
-    const handleLoad = () => {
-      setIsLoaded(true);
-    };
-    window.addEventListener("load", handleLoad);
-    return () => {
-      window.removeEventListener("load", handleLoad);
-    };
-  }, []);
-  useEffect(() => {
-    if (isLoaded) {
-      const timers = [
-        setInterval(() => setText1(true), 1000),
-        setInterval(() => setText2(true), 2000),
-        setInterval(() => setText3(true), 3000),
-        setInterval(() => setText4(true), 4000),
-      ];
+const [textVisibility, setTextVisibility] = useState([false, false, false, false]); // Array for all text visibility
 
-      return () => {
-        timers.forEach(clearTimeout);
-      };
+useEffect(() => {
+  const handleLoad = () => {
+    setIsLoaded(true);
+  };
+  window.addEventListener("load", handleLoad);
+  return () => {
+    window.removeEventListener("load", handleLoad);
+  };
+}, []);
+
+useEffect(() => {
+  if (isLoaded) {
+    let timeoutIds = []; // Array to store timeout IDs
+    for (let i = 0; i < 4; i++) {
+      const delay = (i + 1) * 1000; // Delays from 1 to 4 seconds
+      timeoutIds.push(setTimeout(() => setTextVisibility(prev => {
+        const updatedVisibility = [...prev];
+        updatedVisibility[i] = true;
+        return updatedVisibility;
+      }), delay));
     }
-  }, [isLoaded]);
-  console.log(isLoaded);
+    return () => {
+      timeoutIds.forEach(clearTimeout); // Clear all timeouts on cleanup
+    };
+  }
+}, [isLoaded]);
+
   
   return (
     <section
@@ -45,21 +46,21 @@ export default function Start() {
             </a>
             <div className="ellipse"></div>
           </div>
-          <div className={`block-reveal ${text3 === true ? "block-reveal--active  " : ""}`}>
+          <div className={`block-reveal ${textVisibility[2] === true ? "block-reveal--active  " : ""}`}>
             <span class="block-reveal__block" style={{background:"white"}}></span>
             <span className="start block-reveal__text">Start<span>&#47;&gt;</span></span></div>
           <br />
-          <div className={`block-reveal ${text1 === true ? "block-reveal--active " : ""}`}>
+          <div className={`block-reveal ${textVisibility[0] === true ? "block-reveal--active " : ""}`}>
           <span class="block-reveal__block"></span>
             <span className="intro__hi block-reveal__text">Hi, my name is<strong className="color-purple">Harish Kumar</strong></span>
           </div>
           <br/>
-          <div className={`block-reveal ${text2 === true ? "block-reveal--active  " : ""}`}>
+          <div className={`block-reveal ${textVisibility[1] === true ? "block-reveal--active  " : ""}`}>
           <span class="block-reveal__block"></span>
             <span className="intro__friend block-reveal__text">i am your <em className="ff-satcify">friendly</em> neighbourhood front end developer</span>
           </div>
           <br />
-          <div className={`block-reveal ${text4 === true ? "block-reveal--active " : ""}`}>
+          <div className={`block-reveal ${textVisibility[3] === true ? "block-reveal--active " : ""}`}>
           <span class="block-reveal__block "style={{background:"white"}}></span>
             <span className="into__letme block-reveal__text"> Let me show You...</span>
           </div>
