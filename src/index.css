@@ -334,6 +334,12 @@ main {
   animation: block-reveal-text 0s;
   animation-delay: 0.4s;
   animation-fill-mode: forwards;
+  -o-animation: block-reveal-text 0s;
+  -o-animation-delay: 0.4s;
+  -o-animation-fill-mode: forwards;
+  -moz-animation: block-reveal-text 0s;
+  -moz-animation-delay: 0.4s;
+  -moz-animation-fill-mode: forwards;
   -webkit-animation: block-reveal-text 0s;
   -webkit-animation-delay: 0.4s;
   -webkit-animation-fill-mode: forwards;
@@ -342,6 +348,10 @@ main {
 .block-reveal--active .block-reveal__block {
   animation: block-rev-block 0.8s;
   animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+  -o-animation: block-rev-block 0.8s;
+  -o-animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+  -moz-animation: block-rev-block 0.8s;
+  -moz-animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
   -webkit-animation: block-rev-block 0.8s;
   -webkit-animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
 }
@@ -390,6 +400,24 @@ main {
     transform: translateX(calc(100% + 1px));
   }
 }
+@-o-keyframes block-rev-block {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(calc(100% + 1px));
+  }
+}
+@-o-keyframes block-rev-block {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(calc(100% + 1px));
+  }
+}
 
 @keyframes block-reveal-text {
   0% {
@@ -401,6 +429,24 @@ main {
   }
 }
 @-webkit-keyframes block-reveal-text {
+  0% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes block-reveal-text {
+  0% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes block-reveal-text {
   0% {
     opacity: 0;
   }
