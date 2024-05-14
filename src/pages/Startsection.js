@@ -29,6 +29,8 @@ export default function Start() {
       };
     }
   }, [isLoaded]);
+  console.log(isLoaded);
+  
   return (
     <section
       className="flex justify-center align-center Start__section"
