@@ -15,12 +15,20 @@ export default function Start() {
       window.removeEventListener("load", handleLoad);
     };
   }, []);
-  if (isLoaded) {
-    setInterval(() => setText1(true), 1000);
-    setInterval(() => setText2(true), 2000);
-    setInterval(() => setText3(true), 3000);
-    setInterval(() => setText4(true), 4000);
-  }
+  useEffect(() => {
+    if (isLoaded) {
+      const timers = [
+        setTimeout(() => setText1(true), 1000),
+        setTimeout(() => setText2(true), 2000),
+        setTimeout(() => setText3(true), 3000),
+        setTimeout(() => setText4(true), 4000),
+      ];
+
+      return () => {
+        timers.forEach(clearTimeout);
+      };
+    }
+  }, [isLoaded]);
   return (
     <section
       className="flex justify-center align-center Start__section"
