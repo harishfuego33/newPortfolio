@@ -29,7 +29,6 @@ export default function Start() {
       };
     }
   }, [isLoaded]);
-  console.log(isLoaded)
   if(isLoaded===false)
     setTimeout(()=>setIsLoaded(true),1000)
   return (
