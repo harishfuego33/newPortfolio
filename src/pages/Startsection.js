@@ -35,36 +35,23 @@ export default function Start() {
             </a>
             <div className="ellipse"></div>
           </div>
-          <div
-            className={`text-body-1 ${text3 === true ? "reveal opa-1" : ""}`}
-          >
-            <span className="start">
-              Start<span>&#47;&gt;</span>
-            </span>
+          <div className={`block-reveal ${text3 === true ? "block-reveal--active  " : ""}`}>
+            <span class="block-reveal__block" style={{background:"white"}}></span>
+            <span className="start block-reveal__text">Start<span>&#47;&gt;</span></span></div>
+          <br />
+          <div className={`block-reveal ${text1 === true ? "block-reveal--active " : ""}`}>
+          <span class="block-reveal__block"></span>
+            <span className="intro__hi block-reveal__text">Hi, my name is<strong className="color-purple">Harish Kumar</strong></span>
+          </div>
+          <br/>
+          <div className={`block-reveal ${text2 === true ? "block-reveal--active  " : ""}`}>
+          <span class="block-reveal__block"></span>
+            <span className="intro__friend block-reveal__text">i am your <em className="ff-satcify">friendly</em> neighbourhood front end developer</span>
           </div>
           <br />
-          <div
-            className={`text-body-2 ${text1 === true ? "reveal opa-1" : ""}`}
-          >
-            <span className="intro__hi">
-              Hi, my name is
-              <strong className="color-purple">Harish Kumar</strong>
-            </span>
-          </div>
-          <br />
-          <div
-            className={`text-body-3 ${text2 === true ? "reveal opa-1" : ""}`}
-          >
-            <span className="intro__friend">
-              i am your <em className="ff-satcify">friendly</em> neighbourhood
-              front end developer
-            </span>
-          </div>
-          <br />
-          <div
-            className={`text-body-4 ${text4 === true ? "reveal opa-1" : ""}`}
-          >
-            <span className="into__letme"> Let me show You...</span>
+          <div className={`block-reveal ${text4 === true ? "block-reveal--active " : ""}`}>
+          <span class="block-reveal__block "style={{background:"white"}}></span>
+            <span className="into__letme block-reveal__text"> Let me show You...</span>
           </div>
         </article>
       </div>
