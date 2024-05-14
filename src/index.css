@@ -305,25 +305,25 @@ main {
   font-family: "Roboto Condensed";
   color: #727272;
   font-size: 1.7rem;
-  opacity: 0;
+  opacity: 1;
 }
 .intro__hi {
   display: inline-block;
   font-family: "Roboto Condensed";
   color: white;
   font-size: var(--ff-size-4rem);
-  opacity: 0;
+  opacity: 1;
   margin-top: 2rem;
 }
 .intro__friend {
   display: inline-block;
   color: white;
   font-size: var(--ff-size-4rem);
-  opacity: 0;
+  opacity: 1;
   margin-top: 1rem;
 }
 .into__letme {
-  opacity: 0;
+  opacity: 1;
   display: inline-block;
   margin-top: 3rem;
   font-size: var(--ff-size-3rem);
@@ -348,7 +348,7 @@ main {
   transform: translateX(calc(100% + 1px));
   width: 100%;
   will-change: transform;
-  z-index: 1;
+  z-index: 10;
 }
 /* projesct Section */
 .project__section {
