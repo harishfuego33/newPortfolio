@@ -410,14 +410,14 @@ main {
   }
 }
 
-@media only screen and (max-width: 1023px) {
+@media (max-width: 1023px) {
   :root {
     --ff-size-4rem: 3.5rem;
     --ff-size-2rem: 1.5rem;
     --ff-size-3rem: 2.5rem;
   }
 }
-@media only screen and (max-width: 860px) {
+@media (max-width: 860px) {
   :root {
     --ff-size-4rem: 3rem;
     --ff-size-2rem: 1rem;
@@ -431,5 +431,17 @@ main {
   }
   .background-main {
     display: block;
+  }
+}
+@media (max-width: 600px) {
+  .block-reveal--active .block-reveal__text {
+    animation: block-reveal-text 0s;
+    animation-delay: 0.2s; /* Shorter delay for mobile */
+    animation-fill-mode: forwards;
+  }
+
+  .block-reveal--active .block-reveal__block {
+    animation: block-rev-block 0.6s; /* Shorter duration for mobile */
+    animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
   }
 }
