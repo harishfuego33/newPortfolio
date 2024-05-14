@@ -29,7 +29,9 @@ export default function Start() {
       };
     }
   }, [isLoaded]);
-  console.log(text1,text2,text3,text4)
+  console.log(isLoaded)
+  if(isLoaded===false)
+    setTimeout(()=>setIsLoaded(true),1000)
   return (
     <section
       className="flex justify-center align-center Start__section"
