@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import mouse from "../assests/icon/mouse.svg";
-export default function Start() {
+const Start = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [text1, setText1] = useState(false);
   const [text2, setText2] = useState(false);
@@ -33,11 +33,11 @@ export default function Start() {
     setTimeout(()=>setIsLoaded(true),1000)
   return (
     <section
-      className="flex justify-center align-center Start__section"
+      className="flex justify-center Start__section"
       id="#Start"
     >
-      <div className="row flex justify-center align-center col-7 ">
-        <article className="intro__article ">
+      <div className="row align-self-center w-100 justify-center align-center  ">
+        <div className="intro__article col-7">
           <div className="timeline">
             <a href="#Project" className="scroll-box">
               <img src={mouse} alt="mouse" className="mouse-icon" />
@@ -47,7 +47,8 @@ export default function Start() {
           </div>
           <div className={`block-reveal ${text3 === true ? "block-reveal--active  " : ""}`}>
             <span class="block-reveal__block" style={{background:"white"}}></span>
-            <span className="start block-reveal__text">Start<span>&#47;&gt;</span></span></div>
+            <span className="start block-reveal__text">Start<span>&#47;&gt;</span></span>
+          </div>
           <br />
           <div className={`block-reveal ${text1 === true ? "block-reveal--active " : ""}`}>
           <span class="block-reveal__block"></span>
@@ -63,8 +64,9 @@ export default function Start() {
           <span class="block-reveal__block "style={{background:"white"}}></span>
             <span className="into__letme block-reveal__text"> Let me show You...</span>
           </div>
-        </article>
+        </div>
       </div>
     </section>
   );
 }
+export default Start;
