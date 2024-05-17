@@ -52,7 +52,7 @@ const Start = () => {
           <br />
           <div className={`block-reveal ${text1 === true ? "block-reveal--active " : ""}`}>
           <span class="block-reveal__block"></span>
-            <span className="intro__hi block-reveal__text">Hi, my name is<strong className="color-purple">Harish Kumar</strong></span>
+            <span className="intro__hi block-reveal__text">Hi, my name is <strong className="color-purple">Harish Kumar</strong></span>
           </div>
           <br/>
           <div className={`block-reveal ${text2 === true ? "block-reveal--active  " : ""}`}>

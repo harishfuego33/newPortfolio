@@ -34,7 +34,7 @@ function NavBar() {
         </button>
         <div className={`background-main ${active ? "active" : ""}`}></div>
       </nav>
-      <ul className="navbar__center ff-Robot">
+      <ul className={`navbar__center ${ active ? "active" : " "} ff-Robot`}>
         <li
           className={`navbar__center-option ${
             active ? "active" : ""
@@ -47,7 +47,7 @@ function NavBar() {
           </a>
         </li>
         <li
-          className={`navbar__center-option ${
+          className={`navbar__center-option  ${
             active ? "active" : ""
           } flex align-center justify-center `}
           onClick={() => setActive(!active)}
