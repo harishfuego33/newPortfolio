@@ -417,7 +417,7 @@ main {
 }
 .grid {
   display: grid;
-  grid-template-columns: 0.1fr repeat(2, 1fr) 0.1fr;
+  grid-template-columns: 0.1fr repeat(2, min-content) 0.1fr;
   grid-template-rows: repeat(2, min-content);
   row-gap: 3rem;
   grid-template-areas:
@@ -439,12 +439,7 @@ main {
   width: 50rem;
   height: 22rem;
 }
-.box:hover {
-  cursor: pointer;
-}
-.box:hover .img-box {
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
-}
+
 .img-box {
   width: 42rem;
   height: 22rem;
@@ -473,6 +468,20 @@ main {
 .project-00 {
   font-size: 2rem;
   color: var(--lite-gray);
+}
+.project-arrow {
+  color: white;
+  font-weight: 700;
+  transition: transform 0.4s;
+}
+.box:hover {
+  cursor: pointer;
+}
+.box:hover .img-box {
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
+}
+.box:hover .project-arrow {
+  transform: translateX(1rem);
 }
 
 .about__section {

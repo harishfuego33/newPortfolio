@@ -69,7 +69,7 @@ const Box = ({atr}) => {
             <h1 className="project-title">SUSPICIOUS URL DETECTOR</h1>
             <div className="project-line"></div>
             <h1 className="project-00">00</h1>
-            <div>&rarr;</div>
+            <div className="project-arrow">&rarr;</div>
         </div>
       </div>
     );
