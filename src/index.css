@@ -31,7 +31,6 @@ body {
 /* utility classes */
 .color-purple {
   color: var(--primary) !important;
-  margin-left: 1rem;
 }
 .color-white {
   background-color: white;
@@ -346,6 +345,7 @@ main {
   font-size: var(--ff-size-4rem);
   opacity: 0;
   margin-top: 2rem;
+  margin-right: 1rem;
 }
 .intro__friend {
   display: inline-block;
@@ -356,8 +356,8 @@ main {
 }
 .into__letme {
   opacity: 0;
-  /* display: inline-block; */
-  margin-top: 3rem;
+  display: inline-block;
+  margin-top: 4rem;
   font-size: var(--ff-size-3rem);
   color: var(--lite-gray);
 }
@@ -464,6 +464,7 @@ main {
   position: absolute;
   bottom: 3rem;
   width: 12rem;
+  transform: translateZ(3rem);
 }
 .project-title {
   font-size: 2rem;
@@ -493,6 +494,7 @@ main {
   filter: initial;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
 }
+
 .box:hover .project-arrow {
   transform: translateX(1rem);
 }

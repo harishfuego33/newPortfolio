@@ -106,6 +106,7 @@ const Box =({settings = { max: 25, perspective: 800, scale: 1, axis: null }, // 
                         rotateY(${settings.axis === "y" ? 0 : t.tiltX}deg) 
                         scale3d(${settings.scale}, ${settings.scale}, ${settings.scale})
                     `;
+                    
                 }
         
                 function mouseout(event) {
@@ -130,7 +131,7 @@ const Box =({settings = { max: 25, perspective: 800, scale: 1, axis: null }, // 
         <div className="img-box" >
             <img className = "img" src={webp} alt="project-img" type="image/webp"/>
         </div>
-        <div className="project-info">
+        <div className="project-info" >
             <h1 className="project-title">{title}</h1>
             <div className="project-line"></div>
             <h1 className="project-00">{index}</h1>
