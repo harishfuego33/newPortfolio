@@ -521,6 +521,7 @@ main {
   position: relative;
   cursor: pointer;
   margin-top: 5px;
+  font-size: 1.6rem;
 }
 .White {
   color: white;
@@ -555,13 +556,11 @@ main {
 .dot,
 .comment {
   display: inline;
-  font-size: 1.6rem;
   letter-spacing: 1px;
 }
 .code::after {
   content: attr(data-line-nr);
   color: #3b3452;
-  font-size: 1.6rem;
   letter-spacing: 1px;
   position: absolute;
   left: -6rem;
@@ -576,7 +575,15 @@ main {
   width: 300%;
   z-index: -2;
 }
-
+.blink {
+  display: inline-block;
+  color: white;
+  animation-name: block-reveal-text;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
 .contact__section {
   height: 100vh;
   width: 100%;
@@ -679,5 +686,8 @@ main {
   }
   .img-box {
     filter: initial;
+  }
+  .code {
+    font-size: 1.6rem;
   }
 }
