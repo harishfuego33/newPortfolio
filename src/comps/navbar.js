@@ -6,11 +6,11 @@ function NavBar() {
     <>
       <nav className=" flex align-center navbar-box">
         <div className=" flex align-center ff-inter">
-          <span className="lessthan">&lt;</span>
+          <span className="lessthan">&#8249;</span>
           <h1 className="heading">HarisH</h1>
-          <span className="lessthan">&#47;&gt;</span>
+          <span className="lessthan">&#47;&#8250;</span>
         </div>
-        <ul className="navbar__options ff-Robot flex">
+        <ul className="navbar__options ff-Robot flex">  
           <li className="navbar__option">
             Start<span>&#47;&gt;</span>
           </li>
