@@ -196,7 +196,7 @@ main {
 .navbar__center-option {
   list-style: none;
   color: white;
-  font-size: var(--ff-size-3rem);
+  font-size: 3rem;
   transform: translateX(-100%);
   transition-delay: 0.8s;
   transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -394,7 +394,7 @@ main {
   overflow: hidden;
   z-index: 10;
   position: relative;
-  min-height: 105rem;
+  min-height: 90rem;
 }
 .timeline.alt {
   top: 0;
