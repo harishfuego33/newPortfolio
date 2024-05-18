@@ -388,17 +388,17 @@ main {
   background-image: url(/src/assests/bg-project.webp);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
   width: 100%;
-  height: 100vh;
+  height: 200vh;
   padding: 0 3rem;
   overflow: hidden;
   z-index: 10;
   position: relative;
+  min-height: 105rem;
 }
 .timeline.alt {
   top: 0;
-  height: 1000%;
+  height: 2000%;
 }
 .ellipse.alt {
   top: 4rem;
@@ -417,12 +417,14 @@ main {
 }
 .grid {
   display: grid;
-  grid-template-columns: 0.1fr repeat(2, min-content) 0.1fr;
-  grid-template-rows: repeat(2, min-content);
+  grid-template-columns: 0.1fr repeat(2, 1fr) 0.1fr;
+  grid-template-rows: repeat(4, fit-content);
   row-gap: 3rem;
   grid-template-areas:
     ". project-1 . ."
-    ". . project-2 .";
+    ". . project-2 ."
+    ". project-3 . ."
+    ". . project-4 .";
   width: 100%;
   margin-top: 1rem;
   align-self: flex-start;
@@ -433,17 +435,26 @@ main {
 .project-2 {
   grid-area: project-2;
 }
+.project-3 {
+  grid-area: project-3;
+}
+.project-4 {
+  grid-area: project-4;
+}
 .box {
   z-index: 10;
   position: relative;
-  width: 50rem;
+  width: 54rem;
   height: 22rem;
+  transition: transform 0.1s ease;
+  will-change: transform;
+  display: flex;
 }
-
 .img-box {
-  width: 42rem;
-  height: 22rem;
+  width: 100%;
+  height: 100%;
   margin-left: 8rem;
+  filter: brightness(50%);
 }
 .img {
   width: 100%;
@@ -453,11 +464,11 @@ main {
   position: absolute;
   bottom: 3rem;
   width: 12rem;
-  perspective: 800px;
 }
 .project-title {
-  font-size: var(--ff-size-2rem);
+  font-size: 2rem;
   color: #fff;
+  z-index: 22;
 }
 .project-line {
   height: 2px;
@@ -478,6 +489,8 @@ main {
   cursor: pointer;
 }
 .box:hover .img-box {
+  transform: translateZ(12px);
+  filter: initial;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
 }
 .box:hover .project-arrow {
@@ -535,5 +548,44 @@ main {
   }
   .background-main {
     display: block;
+  }
+  .Start__section {
+    background-position: center center;
+  }
+  .grid {
+    grid-template-columns: 0.1fr 0.1fr 1fr;
+    grid-template-areas:
+      ". .project-1  "
+      ". . project-2 "
+      ". . project-3  "
+      ". . project-4 ";
+    place-items: center;
+  }
+  .box {
+    width: 47rem;
+    height: 19rem;
+    /* transform: none !important; */
+  }
+}
+@media (max-width: 620px) {
+  .Start__section {
+    padding: 7rem 1rem;
+  }
+  .project__section {
+    padding: 0rem 1rem;
+    height: 100vh;
+  }
+  .row {
+    padding-inline: 0;
+    /* flex-wrap: wrap; */
+  }
+  .grid {
+    margin-top: 7rem;
+    row-gap: 5rem;
+  }
+  .box {
+    width: 30rem;
+    height: 17rem;
+    /* transform: none !important; */
   }
 }
