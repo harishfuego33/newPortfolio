@@ -697,6 +697,14 @@ main {
   bottom: -5px;
   filter: blur(25px);
 }
+
+.copyrigth {
+  color: rgb(145, 142, 142);
+  font-size: 1.4rem;
+}
+.copyrigth .copy-lessthan {
+  color: var(--blue);
+}
 @keyframes block-rev-block {
   0% {
     transform: translateX(-100%);

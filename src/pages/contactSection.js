@@ -50,6 +50,7 @@ function Contact() {
                         </button>  
                         </a>
                     </div>
+                    <p className="copyrigth">&copy; made with &lt;&#47;&gt; by <span className="copy-lessthan"> &#8249;</span>HarisH<span className="copy-lessthan">&#47;&#8250;</span> copyright 2024</p>
                 </div>
             </div>
         </section>
