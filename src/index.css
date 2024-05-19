@@ -127,10 +127,13 @@ main {
   margin-left: 0.5rem;
   color: var(--blue);
 }
-.navbar__option:hover {
+.nav-link {
+  text-decoration: none;
+  color: white;
+}
+.nav-link:hover {
   color: hsla(0, 0%, 100%, 0.5);
 }
-
 .hamburger-btn {
   display: none;
   width: 5rem;
@@ -390,12 +393,12 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 200vh;
+  height: 190vh;
   padding: 0 3rem;
   overflow: hidden;
   z-index: 10;
   position: relative;
-  min-height: 90rem;
+  min-height: 100vh;
 }
 .timeline.alt {
   top: 0;
@@ -513,7 +516,7 @@ main {
   position: relative;
 }
 .codewrap {
-  margin-top: 3rem;
+  margin: 3rem 0;
   font-family: "Roboto Mono", monospace;
 }
 .code {
@@ -523,6 +526,12 @@ main {
   margin-top: 5px;
   font-size: 1.6rem;
 }
+.code[data-line-nr="19"] {
+  word-break: break-all;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
 .White {
   color: white;
 }
@@ -578,17 +587,113 @@ main {
 .blink {
   display: inline-block;
   color: white;
-  animation-name: block-reveal-text;
+  animation-name: blink;
   animation-duration: 1s;
-  animation-delay: 1s;
-  animation-timing-function: ease;
+  animation-timing-function: step-end;
   animation-iteration-count: infinite;
 }
 .contact__section {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-color: var(--contact-background);
+  padding: 0 3rem;
+  overflow: hidden;
+  z-index: 10;
+  position: relative;
 }
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50rem;
+  gap: 2rem;
+}
+.findmeon {
+  color: white;
+  font-size: var(--ff-size-25rem, 2.5rem);
+  font-weight: 400;
+}
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 0.3fr);
+  gap: 1rem;
+}
+
+.link-icon {
+  width: 3rem;
+  height: 3rem;
+}
+.link {
+  font-family: "Roboto Condensed";
+  font-size: 2rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+.link:active,
+.link:visited {
+  color: var(--primary);
+}
+.link:hover,
+.link:link,
+.link-icon {
+  color: var(--blue);
+}
+
+.resume-btn,
+.btn-2 {
+  width: 18rem;
+  height: 6rem;
+  background: linear-gradient(-45deg, #ffa63d, #ff3d77, #1593e3, #5918df);
+  background-size: 1100%;
+  border: none;
+  border-radius: 50px;
+  color: hsla(0, 0%, 100%, 0.9);
+  font-family: Roboto Mono, Courier New, Courier, monospace !important;
+  font-size: 20px;
+  line-height: 1;
+  padding: 17px 35px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  transform: scaleX(1);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-position 3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.resume {
+  position: relative;
+}
+.btn-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid white;
+}
+.resume p {
+  color: white;
+  top: 2.1rem;
+  left: 6rem;
+  position: absolute;
+  z-index: 11;
+  font-size: 14px;
+  cursor: pointer;
+}
+.resume-btn:hover {
+  background-position: 100% 50%;
+  bottom: 2px;
+  transform: scale3d(1.1, 1.1, 1);
+  background-position: 100% 50%;
+  bottom: -5px;
+  filter: blur(25px);
+  z-index: 10;
+}
+.resume-btn:hover + p,
+.resume-btn:hover > .btn-2 {
+  z-index: 12;
+  transform: scale(1.1);
+}
+
 @keyframes block-rev-block {
   0% {
     transform: translateX(-100%);
@@ -606,6 +711,17 @@ main {
 
   to {
     opacity: 1;
+  }
+}
+@keyframes glow {
+  0% {
+    background-color: var(--blue);
+  }
+  50% {
+    background: rgb(157, 9, 252);
+  }
+  100% {
+    background: rgb(99, 3, 161);
   }
 }
 
@@ -650,13 +766,18 @@ main {
   }
   .project__section {
     height: 100rem;
+    min-height: auto;
   }
   .about__section {
-    background-position: center center;
-    min-height: 100rem;
+    background-size: cover;
+    min-height: auto;
   }
+
   .dot {
     display: none;
+  }
+  .link-grid {
+    grid-template-columns: inherit;
   }
 }
 @media (max-width: 620px) {
@@ -665,15 +786,15 @@ main {
   }
   .project__section {
     padding: 0rem 1rem;
-    height: 100vh;
   }
   .about__section {
     padding: 0rem 1rem;
-    height: 100vh;
+  }
+  .contact__section {
+    padding: 0rem 1rem;
   }
   .row {
     padding-inline: 0;
-    /* flex-wrap: wrap; */
   }
   .grid {
     margin-top: 7rem;

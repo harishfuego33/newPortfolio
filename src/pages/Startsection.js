@@ -34,7 +34,7 @@ const Start = () => {
   return (
     <section
       className="flex justify-center Start__section"
-      id="#Start"
+      id="Start"
     >
       <div className="row align-self-center w-100 justify-center align-center  ">
         <div className="intro__article col-7">

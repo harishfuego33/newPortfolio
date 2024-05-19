@@ -12,16 +12,23 @@ function NavBar() {
         </div>
         <ul className="navbar__options ff-Robot flex">  
           <li className="navbar__option">
-            Start<span>&#47;&gt;</span>
+          <a href="#Start" className="nav-link">
+            Start<span>&#47;&gt;</span></a>
           </li>
           <li className="navbar__option">
+          <a href="#Project" className="nav-link">
             Project<span>&#47;&gt;</span>
+          </a>
           </li>
           <li className="navbar__option">
+          <a href="#About" className="nav-link">
             About<span>&#47;&gt;</span>
+            </a>
           </li>
           <li className="navbar__option">
+          <a href="#Contact" className="nav-link">
             Contact<span>&#47;&gt;</span>
+            </a>
           </li>
         </ul>
         <button

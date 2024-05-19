@@ -32,12 +32,12 @@ const Project = () =>
     }
     ]
     return(
-        <Section atr="project__section" props={props}/>
+        <Section  props={props}/>
     );
 }
-const Section=({atr,props})=>{
+const Section=({props})=>{
     return(
-        <section className={`flex justify-center ${atr}`}id="Project">
+        <section className={`flex justify-center project__section`}id="Project">
             <div className="row w-100 gap-2">
                 <div className="intro__article col-7">
                     <div className="timeline alt"><div className="ellipse alt"></div></div>
@@ -115,7 +115,7 @@ const Box =({settings = { max: 25, perspective: 800, scale: 1, axis: null }, // 
                 };
             }, [settings, reverse, fullPageListening]);
     return (
-        <div className={`box ${atr}`} ref={boxRef}>
+        <div className={`box ${atr} `} ref={boxRef}>
             <div className="img-box" >
                 <img className = "img" src={webp} alt="project-img" type="image/webp"/>
             </div>

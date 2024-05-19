@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.e69f7040.css",
-    "main.js": "/static/js/main.9039c4f3.js",
+    "main.css": "/static/css/main.41b7b604.css",
+    "main.js": "/static/js/main.b09a5fb9.js",
     "static/media/project-1.webp": "/static/media/project-1.dfc7db55d2a420276f75.webp",
     "static/media/project-3.webp": "/static/media/project-3.6d709a6a757133ae42f0.webp",
     "static/media/bg-start.webp": "/static/media/bg-start.87635d9d72948eff83a4.webp",
@@ -10,12 +10,17 @@
     "static/media/bg-project.webp": "/static/media/bg-project.a8ac0948c7f1ae6a2b48.webp",
     "static/media/bg-about.webp": "/static/media/bg-about.bc3c54d3d2da5970facb.webp",
     "static/media/mouse.svg": "/static/media/mouse.c233e26aceb0b482378e4ae82bc823f9.svg",
+    "static/media/icons8-geeksforgeeks.svg": "/static/media/icons8-geeksforgeeks.d4b8118e9f29b23d4e8e069b50767371.svg",
+    "static/media/icons8-github.svg": "/static/media/icons8-github.d26afb0142cfee22c9143e7d0ffdfc7d.svg",
+    "static/media/leetcode.svg": "/static/media/leetcode.f20c82b66946899e56dbf45a97e170e7.svg",
+    "static/media/icons8-hackerrank.svg": "/static/media/icons8-hackerrank.d6cde6bcd23b1e95fe3a904b4cbe4666.svg",
+    "static/media/icons8-linked-in.svg": "/static/media/icons8-linked-in.031f0b03635661b40ce131385abd9480.svg",
     "index.html": "/index.html",
-    "main.e69f7040.css.map": "/static/css/main.e69f7040.css.map",
-    "main.9039c4f3.js.map": "/static/js/main.9039c4f3.js.map"
+    "main.41b7b604.css.map": "/static/css/main.41b7b604.css.map",
+    "main.b09a5fb9.js.map": "/static/js/main.b09a5fb9.js.map"
   },
   "entrypoints": [
-    "static/css/main.e69f7040.css",
-    "static/js/main.9039c4f3.js"
+    "static/css/main.41b7b604.css",
+    "static/js/main.b09a5fb9.js"
   ]
 }
