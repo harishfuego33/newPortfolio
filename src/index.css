@@ -361,7 +361,6 @@ main {
 .into__letme {
   opacity: 0;
   display: inline-block;
-  margin-top: 4rem;
   font-size: var(--ff-size-3rem);
   color: var(--lite-gray);
 }
@@ -636,8 +635,7 @@ main {
   color: var(--primary);
 }
 .link:hover,
-.link:link,
-.link-icon {
+.link:link {
   color: var(--blue);
 }
 
@@ -804,6 +802,14 @@ main {
   .contact__section {
     padding: 0rem 1rem;
   }
+  .link:active,
+  .link:link {
+    color: var(--primary);
+  }
+  .link:visited {
+    color: var(--blue);
+  }
+
   .row {
     padding-inline: 0;
   }

@@ -60,6 +60,9 @@ const Start = () => {
             <span className="intro__friend block-reveal__text">i am your <em className="ff-satcify">friendly</em> neighbourhood front end developer</span>
           </div>
           <br />
+          <br />
+          <br />
+          <br />
           <div className={`block-reveal ${text4 === true ? "block-reveal--active " : ""}`}>
           <span class="block-reveal__block "style={{background:"white"}}></span>
             <span className="into__letme block-reveal__text"> Let me show You...</span>
