@@ -668,7 +668,8 @@ main {
   position: absolute;
   top: 0;
   left: 0;
-  border: 1px solid white;
+
+  background: transparent;
 }
 .resume p {
   color: white;
