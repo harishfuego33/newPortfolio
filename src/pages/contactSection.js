@@ -43,10 +43,11 @@ function Contact() {
                             </div>
                         </div>
                         <a className="resume" href="https://drive.google.com/file/d/1Hbe_8Q_1tGQWj8-8dGxWRW_FGKx06vbB/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                            <button className="resume-btn">
-                                <button className="btn-2"></button>
+                        <button className="resume-btn">
+                            RESUME
+                            <button className="btn-2">
                             </button>
-                            <p>RESUME</p>
+                        </button>  
                         </a>
                     </div>
                 </div>
