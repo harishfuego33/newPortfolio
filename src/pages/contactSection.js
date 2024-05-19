@@ -34,12 +34,12 @@ function Contact() {
                             <div className="link-container">
                                 <a className="link" href="https://auth.geeksforgeeks.org/user/harishfuego33" target="_blank" rel="noopener noreferrer">
                                 <img src={geeksforgeeks} alt="linked" className="link-icon"/>
-                                    harish_33</a>
+                                    geeksforgeeks/harish_33</a>
                             </div>
                             <div className="link-container">
                                 <a className="link" href="https://www.hackerrank.com/harish_33" target="_blank" rel="noopener noreferrer">
                                 <img src={hackerrank} alt="linked" className="link-icon"/>
-                                    harish_33</a>
+                                    hackerrank/harish_33</a>
                             </div>
                         </div>
                         <a className="resume" href="https://drive.google.com/file/d/1Hbe_8Q_1tGQWj8-8dGxWRW_FGKx06vbB/view?usp=sharing" target="_blank" rel="noopener noreferrer">
