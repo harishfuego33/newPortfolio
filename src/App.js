@@ -8,6 +8,7 @@ import Project0 from "./pages/project-0";
 import Project1 from "./pages/project-1";
 import Project2 from "./pages/project-2";
 import Project3 from "./pages/project-3";
+import { useState } from "react";
 import "./index.css";
 
 export default function App() {
@@ -26,11 +27,17 @@ export default function App() {
   );
 }
 const Main = () => {
+  const [reveal, setreveal] = useState(false);
   return (
-    <main className="MAIN ">
+    <main
+      className={`block-reveal ${
+        reveal === true ? "block-reveal--active" : ""
+      }`}
+    >
+      <span class="block-reveal__block-2"></span>
       <NavBar />
       <Start />
-      <Project />
+      <Project setreveal={setreveal} reveal={reveal} />
       <About />
       <Contact />
     </main>

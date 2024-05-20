@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import { NavLink, Navigate, useNavigate } from "react-router-dom";
-const Project = () => {
+const Project = ({ setreveal, reveal }) => {
   const props = [
     {
       index: "00",
@@ -31,18 +31,12 @@ const Project = () => {
       to: "/project-3",
     },
   ];
-  const [reveal, setreveal] = useState(false);
+
   return <Section props={props} setreveal={setreveal} reveal={reveal} />;
 };
 const Section = ({ props, setreveal, reveal }) => {
   return (
-    <section
-      className={`flex justify-center project__section block-reveal ${
-        reveal === true ? "block-reveal--active  " : ""
-      }`}
-      id="Project"
-    >
-      <span class="block-reveal__block-2"></span>
+    <section className={`flex justify-center project__section `} id="Project">
       <div className="row w-100 gap-2">
         <div className="intro__article col-7">
           <div className="timeline alt">
@@ -90,7 +84,7 @@ const Box = ({
     setActive(!active);
     setTimeout(() => {
       navgate(to);
-    }, 1600);
+    }, 1800);
   }
   const boxRef = useRef(null);
   useEffect(() => {
