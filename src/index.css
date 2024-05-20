@@ -24,7 +24,8 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+body,
+#root {
   min-height: 100vh;
   width: 100%;
 }
@@ -57,9 +58,14 @@ body {
 .align-start {
   align-items: start !important;
 }
-
+.justify-space-between {
+  justify-content: space-between !important;
+}
 .m-100vh {
   min-height: 100vh;
+}
+.h-90 {
+  height: 90%;
 }
 .flex-row {
   flex-direction: row;
@@ -73,6 +79,7 @@ body {
 .w-100 {
   width: 100% !important;
 }
+
 .align-self-center {
   align-self: center !important;
 }
@@ -87,6 +94,9 @@ body {
 }
 .hidden {
   display: none;
+}
+.ff-size-2rem {
+  font-size: var(--ff-size-3rem);
 }
 
 main {
@@ -237,7 +247,7 @@ main {
 }
 
 .Start__section {
-  background-image: url(/src/assests/bg-start.webp);
+  background-image: url(../public/assets/bg-start.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -388,7 +398,7 @@ main {
 
 /* project Section */
 .project__section {
-  background-image: url(/src/assests/bg-project.webp);
+  background-image: url(../public/assets/bg-project.webp);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -463,6 +473,7 @@ main {
 .img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 .project-info {
   position: absolute;
@@ -505,7 +516,7 @@ main {
 .about__section {
   min-height: 100vh;
   width: 100%;
-  background-image: url("/src/assests/bg-about.webp");
+  background-image: url("../public/assets/bg-about.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
@@ -703,6 +714,88 @@ main {
 .copyrigth .copy-lessthan {
   color: var(--blue);
 }
+
+.image__gallery {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  grid-template-areas: "tag-1 tag-2";
+  background-color: var(--web-background);
+  width: 100%;
+  min-height: 100vh;
+}
+.imageStack {
+  grid-area: tag-1;
+  display: block;
+  width: 100%;
+  background-color: gray;
+}
+.imageStack-img {
+  width: 100%;
+}
+.project__info {
+  grid-area: tag-2;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 4rem;
+  background-color: #0e0c16;
+}
+.image__gallery-navbar {
+  justify-content: space-between;
+}
+.project__nav-link {
+  font-size: var(--ff-size-2rem);
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nextprev {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nextprev-btn {
+  text-decoration: none;
+  color: white;
+  margin-inline: 1rem;
+}
+.techStacks {
+  margin-top: 3rem;
+  font-size: 2rem;
+  color: gray;
+}
+.ff-size-4rem {
+  margin: 4rem 0;
+  font-size: 3rem;
+}
+.project-description {
+  margin-top: 2rem;
+  font-size: 2rem;
+  color: white;
+  font-weight: 200;
+}
+.project-num {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.project-info-line {
+  height: 2px;
+  width: 80%;
+  background-color: white;
+}
+.project-count {
+  font-size: 2rem;
+  color: white;
+}
 @keyframes block-rev-block {
   0% {
     transform: translateX(-100%);
@@ -786,7 +879,17 @@ main {
     display: none;
   }
   .link-grid {
-    grid-template-columns: inherit;
+    grid-template-columns: initial;
+  }
+  .image__gallery {
+    grid-template-columns: auto;
+    grid-template-areas:
+      "tag-2"
+      "tag-1";
+  }
+  .project__info {
+    position: initial;
+    min-height: min-content;
   }
 }
 @media (max-width: 620px) {

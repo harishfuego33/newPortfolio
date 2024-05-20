@@ -1,8 +1,5 @@
-import project0 from "../assests/project-0.webp"
-import project1 from "../assests/project-1.webp"
-import project2 from "../assests/project-2.webp"
-import project3 from "../assests/project-3.webp"
 import { useRef,useEffect } from "react";
+import { NavLink } from "react-router-dom";
 const Project = () =>
 {
     const props = [
@@ -10,25 +7,29 @@ const Project = () =>
         index:"00",
         class:"project-1",
         title:"SUSPICIOUS URL DETECTOR",
-        webp:project0
+        webp:"./assets/project-0.webp",
+        to:"/project-1"
     },
     {
         index:"01",
         class:"project-2",
         title:" EXPLORE THE SPACE",
-        webp:project1
+        webp:"./assets/project-1.webp",
+        to:"/project-2"
     },
     {
         index:"02",
         class:"project-3",
         title:"NATUOR FOR TOUR",
-        webp:project2
+        webp:"./assets/project-2.webp",
+        to:"/project-3"
     },
     {
         index:"03",
         class:"project-4",
         title:" AI BASED CLOUD BLOGGING",
-        webp:project3
+        webp:"./assets/project-3.webp",
+        to:"/project-4"
     }
     ]
     return(
@@ -46,7 +47,13 @@ const Section=({props})=>{
                 </div>
                 <div className="grid ">
                 {props.map((props)=>
-                <Box atr={props.class} key={props.index} index={props.index} title ={props.title} webp = {props.webp}/>)}
+                <Box 
+                    atr={props.class} 
+                    key={props.index} 
+                    index={props.index} 
+                    title ={props.title} 
+                    webp = {props.webp}
+                    to = {props.to}/>)}
                 </div>
             </div>
          </section>
@@ -55,7 +62,7 @@ const Section=({props})=>{
 const Box =({settings = { max: 25, perspective: 800, scale: 1, axis: null }, // Default settings
             reverse = 1, // Default reverse value
             fullPageListening = false,
-            atr,index,title,webp // Default fullPageListening value
+            atr,index,title,webp,to // Default fullPageListening value
             }) => 
             {
             const boxRef = useRef(null);
@@ -115,7 +122,7 @@ const Box =({settings = { max: 25, perspective: 800, scale: 1, axis: null }, // 
                 };
             }, [settings, reverse, fullPageListening]);
     return (
-        <div className={`box ${atr} `} ref={boxRef}>
+        <NavLink to={to}className={`box ${atr} `} ref={boxRef}>
             <div className="img-box" >
                 <img className = "img" src={webp} alt="project-img" type="image/webp"/>
             </div>
@@ -125,7 +132,7 @@ const Box =({settings = { max: 25, perspective: 800, scale: 1, axis: null }, // 
                 <h1 className="project-00">{index}</h1>
                 <div className="project-arrow">&rarr;</div>
             </div>
-      </div>
+      </NavLink>
     );
 };
 export default Project;

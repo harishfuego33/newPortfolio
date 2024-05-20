@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import mouse from "../assests/icon/mouse.svg";
+
 const Start = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [text1, setText1] = useState(false);
@@ -40,7 +40,7 @@ const Start = () => {
         <div className="intro__article col-7">
           <div className="timeline">
             <a href="#Project" className="scroll-box">
-              <img src={mouse} alt="mouse" className="mouse-icon" />
+              <img src="./assets/icon/mouse.svg" alt="mouse" className="mouse-icon" />
               <p className="scoll">SCROLL</p>
             </a>
             <div className="ellipse"></div>
