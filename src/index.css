@@ -339,8 +339,7 @@ main {
 }
 
 .block-reveal {
-  align-items: center;
-  display: flex;
+  /* align-items: center; */
   display: inline-block;
   overflow: hidden;
   position: relative;
@@ -385,6 +384,15 @@ main {
   animation: block-rev-block 0.8s;
   animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
 }
+.block-reveal--active .block-reveal__block-1 {
+  animation: block-rev-block-2 0.8s;
+  animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+.block-reveal--active .block-reveal__block-2 {
+  animation: block-rev-block 1s;
+  animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+  animation-delay: 1s;
+}
 .block-reveal__block {
   background: var(--primary);
   content: "";
@@ -393,7 +401,27 @@ main {
   transform: translateX(calc(100% + 1px));
   width: 100%;
   will-change: transform;
-  z-index: 10;
+  z-index: 100;
+}
+.block-reveal__block-1 {
+  background: white;
+  content: "";
+  height: 100%;
+  position: absolute;
+  transform: translateX(calc(100% + 1px));
+  width: 100%;
+  will-change: transform;
+  z-index: 100;
+}
+.block-reveal__block-2 {
+  background: var(--primary);
+  content: "";
+  height: 100%;
+  position: absolute;
+  transform: translateX(calc(100% + 1px));
+  width: 100%;
+  will-change: transform;
+  z-index: 100;
 }
 
 /* project Section */
@@ -649,7 +677,9 @@ main {
 .link:link {
   color: var(--blue);
 }
-
+.resume {
+  text-decoration: none;
+}
 .resume-btn,
 .btn-2 {
   width: 18rem;
@@ -740,6 +770,7 @@ main {
   height: 100vh;
   padding: 4rem;
   background-color: #0e0c16;
+  overflow-y: auto;
 }
 .image__gallery-navbar {
   justify-content: space-between;
@@ -770,10 +801,11 @@ main {
 .techStacks {
   margin-top: 3rem;
   font-size: 2rem;
+  line-height: 3rem;
   color: gray;
 }
 .ff-size-4rem {
-  margin: 4rem 0;
+  margin: 3.5rem 0;
   font-size: 3rem;
 }
 .project-description {
@@ -803,6 +835,15 @@ main {
 
   to {
     transform: translateX(calc(100% + 1px));
+  }
+}
+@keyframes block-rev-block-2 {
+  0% {
+    transform: translateX(calc(100% + 1px));
+  }
+
+  to {
+    transform: translateX(-100%);
   }
 }
 
