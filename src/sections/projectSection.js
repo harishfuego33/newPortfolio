@@ -154,7 +154,6 @@ const Box = ({
       className={`box ${atr}`}
       ref={boxRef}
       onClick={(e) => {
-        // e.preventDefault();
         hold();
         setActive(!active);
       }}
@@ -182,7 +181,7 @@ const Box = ({
             class="block-reveal__block-1"
             style={{ background: "#8036e7" }}
           ></span>
-          <h1 className="project-00">{index}</h1>
+          <h1 className="project-00">0{index}</h1>
           <div className="project-arrow ">&rarr;</div>
         </div>
       </div>
