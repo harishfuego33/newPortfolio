@@ -389,9 +389,9 @@ main {
   animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 .block-reveal--active .block-reveal__block-2 {
-  animation: block-rev-block 1.6s;
-  animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
-  animation-delay: 1s;
+  animation: block-rev-block 2s;
+  animation-timing-function: cubic-bezier(0.21, 0.62, 0.6, 0.78);
+  animation-delay: 0.6s;
 }
 .block-reveal__block {
   background: var(--primary);
@@ -414,7 +414,14 @@ main {
   z-index: 100;
 }
 .block-reveal__block-2 {
-  background: var(--primary);
+  background-image: linear-gradient(
+    120deg,
+    var(--web-background) 0%,
+    var(--web-background) 60%,
+    var(--primary) 60%,
+    var(--primary) 80%,
+    transparent 100%
+  );
   content: "";
   height: 100%;
   position: absolute;
@@ -424,7 +431,6 @@ main {
   z-index: 100;
 }
 
-/* project Section */
 .project__section {
   background-image: url(../public/assets/bg-project.webp);
   background-repeat: no-repeat;
@@ -752,7 +758,7 @@ main {
   background-color: var(--web-background);
   width: 100%;
   min-height: 100vh;
-  transition: all 2s;
+  position: relative;
 }
 .imageStack {
   grid-area: tag-1;
@@ -765,13 +771,18 @@ main {
 }
 .project__info {
   grid-area: tag-2;
-  position: sticky;
+  position: fixed;
   top: 0;
-  width: 100%;
+  width: 35%;
   height: 100vh;
   padding: 4rem;
   background-color: #0e0c16;
   overflow-y: auto;
+  transform: translateX(100px);
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+  animation-name: Rigthin;
+  animation-duration: 0.4s;
 }
 .image__gallery-navbar {
   justify-content: space-between;
@@ -787,6 +798,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .nextprev {
   font-size: 2rem;
@@ -798,6 +810,7 @@ main {
   text-decoration: none;
   color: white;
   margin-inline: 1rem;
+  position: relative;
 }
 .techStacks {
   margin-top: 3rem;
@@ -829,6 +842,33 @@ main {
   font-size: 2rem;
   color: white;
 }
+.toolkit {
+  position: absolute;
+  display: inline-block;
+  font-size: 1.4rem;
+  width: max-content;
+  top: 4rem;
+  opacity: 0;
+  background-color: black;
+  color: var(--blue);
+  transition: opacity 0.3s;
+}
+.toolkit-next {
+  right: -1rem;
+}
+.toolkit-prev {
+  left: -1rem;
+}
+.project__nav-link:hover > .toolkit {
+  opacity: 1;
+}
+.nextprev-btn:hover > .toolkit {
+  opacity: 1;
+}
+.project__nav-link:hover > .toolkit {
+  opacity: 1;
+}
+
 @keyframes block-rev-block {
   0% {
     transform: translateX(-100%);
@@ -866,6 +906,26 @@ main {
   }
   100% {
     background: rgb(99, 3, 161);
+  }
+}
+@keyframes Rigthin {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes leftin {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
   }
 }
 
@@ -932,6 +992,7 @@ main {
   .project__info {
     position: initial;
     min-height: min-content;
+    width: auto;
   }
 }
 @media (max-width: 620px) {

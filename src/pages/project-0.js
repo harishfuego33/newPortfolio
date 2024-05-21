@@ -18,6 +18,7 @@ const projectInfo = {
   prev: null,
   next: "/project-2",
 };
+
 const project1 = () => {
   return (
     <main className="image__gallery">

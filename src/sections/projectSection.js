@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import { NavLink, Navigate, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 const Project = ({ setreveal, reveal }) => {
   const props = [
     {
@@ -84,7 +84,7 @@ const Box = ({
     setActive(!active);
     setTimeout(() => {
       navgate(to);
-    }, 1800);
+    }, 1000);
   }
   const boxRef = useRef(null);
   useEffect(() => {
@@ -170,7 +170,6 @@ const Box = ({
           <h1 className="project-title">{title}</h1>
         </div>
         <div className="project-line"></div>
-        <h1 className="project-00">{index}</h1>
         <div
           className={`block-reveal ${
             active === true ? "block-reveal--active  " : ""
@@ -180,6 +179,7 @@ const Box = ({
             class="block-reveal__block-1"
             style={{ background: "#8036e7" }}
           ></span>
+          <h1 className="project-00">{index}</h1>
           <div className="project-arrow ">&rarr;</div>
         </div>
       </div>

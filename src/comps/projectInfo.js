@@ -1,20 +1,22 @@
+// import { useState } from "react";
 import { NavLink } from "react-router-dom";
 const ProjectInfo = ({ projectInfo }) => {
-  console.log(projectInfo);
   return (
     <section className="project__info">
       <nav className="flex align-center image__gallery-navbar">
         <NavLink to="/" className="project__nav-link">
           &#8592;
+          <span className="toolkit ff-Robot">Ticket to home</span>
         </NavLink>
         <div className="nextprev">
           <NavLink
-            className={`nextprev-btn${
+            className={`nextprev-btn ${
               projectInfo.prev === null ? " hidden " : ""
             }`}
             to={projectInfo.prev}
           >
             &#8592;
+            <span className="toolkit toolkit-prev ff-Robot">Previous</span>
           </NavLink>
           <span
             className={`lessthan ${
@@ -32,6 +34,7 @@ const ProjectInfo = ({ projectInfo }) => {
             to={projectInfo.next}
           >
             &#8594;
+            <span className="toolkit toolkit-next ff-Robot">Next</span>
           </NavLink>
         </div>
       </nav>
