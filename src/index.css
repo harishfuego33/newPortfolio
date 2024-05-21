@@ -415,10 +415,10 @@ main {
 }
 .block-reveal__block-2 {
   background-image: linear-gradient(
-    120deg,
+    90deg,
     var(--web-background) 0%,
-    var(--web-background) 50%,
-    var(--primary) 50%,
+    var(--web-background) 80%,
+    var(--primary) 20%,
     var(--primary) 100%
   );
   content: "";

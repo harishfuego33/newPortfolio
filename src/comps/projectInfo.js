@@ -2,7 +2,7 @@
 import { NavLink } from "react-router-dom";
 const ProjectInfo = ({ projectInfo }) => {
   return (
-    <section className="project__info">
+    <section className="project__info" id="section">
       <nav className="flex align-center image__gallery-navbar">
         <NavLink to="/" className="project__nav-link">
           &#8592;
