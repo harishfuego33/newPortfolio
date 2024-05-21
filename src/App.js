@@ -29,11 +29,7 @@ export default function App() {
 const Main = () => {
   const [reveal, setreveal] = useState(false);
   return (
-    <main
-      className={`block-reveal ${
-        reveal === true ? "block-reveal--active" : ""
-      }`}
-    >
+    <main className={`block-reveal ${reveal ? "block-reveal--active-1" : ""}`}>
       <span class="block-reveal__block-2"></span>
       <NavBar />
       <Start />

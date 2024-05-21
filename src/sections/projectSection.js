@@ -3,28 +3,28 @@ import { NavLink, useNavigate } from "react-router-dom";
 const Project = ({ setreveal, reveal }) => {
   const props = [
     {
-      index: "00",
+      index: 0,
       class: "project-1",
       title: "SUSPICIOUS URL DETECTOR",
       webp: "./assets/project-0.webp",
       to: "/project-0",
     },
     {
-      index: "01",
+      index: 1,
       class: "project-2",
       title: " EXPLORE THE SPACE",
       webp: "./assets/project-1.webp",
       to: "/project-1",
     },
     {
-      index: "02",
+      index: 2,
       class: "project-3",
       title: "NATUOR FOR TOUR",
       webp: "./assets/project-2.webp",
       to: "/project-2",
     },
     {
-      index: "03",
+      index: 3,
       class: "project-4",
       title: " AI BASED CLOUD BLOGGING",
       webp: "./assets/project-3.webp",
@@ -81,7 +81,6 @@ const Box = ({
   const navgate = useNavigate();
   function hold() {
     setreveal(!reveal);
-    setActive(!active);
     setTimeout(() => {
       navgate(to);
     }, 1000);
@@ -151,10 +150,18 @@ const Box = ({
     };
   }, [settings, reverse, fullPageListening]);
   return (
-    <NavLink className={`box ${atr}`} ref={boxRef} onClick={() => hold()}>
+    <NavLink
+      className={`box ${atr}`}
+      ref={boxRef}
+      onClick={(e) => {
+        // e.preventDefault();
+        hold();
+        setActive(!active);
+      }}
+    >
       <div
-        className={`img-box  block-reveal ${
-          active === true ? "block-reveal--active  " : ""
+        className={`img-box block-reveal ${
+          active === true ? "block-reveal--active" : ""
         }`}
       >
         <span class="block-reveal__block-1"></span>
@@ -162,18 +169,14 @@ const Box = ({
       </div>
       <div className="project-info">
         <div
-          className={`block-reveal ${
-            active === true ? "block-reveal--active  " : ""
-          }`}
+          className={`block-reveal ${active ? "block-reveal--active  " : ""}`}
         >
           <span class="block-reveal__block-1"></span>
           <h1 className="project-title">{title}</h1>
         </div>
         <div className="project-line"></div>
         <div
-          className={`block-reveal ${
-            active === true ? "block-reveal--active  " : ""
-          }`}
+          className={`block-reveal ${active ? "block-reveal--active  " : ""}`}
         >
           <span
             class="block-reveal__block-1"

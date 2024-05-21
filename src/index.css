@@ -388,7 +388,7 @@ main {
   animation: block-rev-block-2 0.8s;
   animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
 }
-.block-reveal--active .block-reveal__block-2 {
+.block-reveal--active-1 .block-reveal__block-2 {
   animation: block-rev-block 2s;
   animation-timing-function: cubic-bezier(0.21, 0.62, 0.6, 0.78);
   animation-delay: 0.6s;
@@ -417,10 +417,9 @@ main {
   background-image: linear-gradient(
     120deg,
     var(--web-background) 0%,
-    var(--web-background) 60%,
-    var(--primary) 60%,
-    var(--primary) 80%,
-    transparent 100%
+    var(--web-background) 50%,
+    var(--primary) 50%,
+    var(--primary) 100%
   );
   content: "";
   height: 100%;
