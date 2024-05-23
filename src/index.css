@@ -630,9 +630,9 @@ main {
 .blink {
   display: inline-block;
   color: white;
-  animation-name: blink;
+  animation-name: blinks;
   animation-duration: 1s;
-  animation-timing-function: step-end;
+  animation-timing-function: ease;
   animation-iteration-count: infinite;
 }
 .contact__section {
@@ -927,7 +927,14 @@ main {
     transform: translateX(0px);
   }
 }
-
+@keyframes blinks {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: white;
+  }
+}
 @media (max-width: 1023px) {
   :root {
     --ff-size-4rem: 3.5rem;
