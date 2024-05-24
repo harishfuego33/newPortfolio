@@ -99,7 +99,7 @@ body,
   font-size: var(--ff-size-3rem);
 }
 
-main {
+.portfolio__main {
   min-height: 100vh;
   width: 100%;
   position: relative;
@@ -994,11 +994,12 @@ main {
     grid-template-areas:
       "tag-2"
       "tag-1";
+    width: 100%;
   }
   .project__info {
     position: initial;
     min-height: min-content;
-    width: auto;
+    width: 100%;
   }
 }
 @media (max-width: 620px) {
