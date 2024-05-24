@@ -994,7 +994,7 @@ body,
     grid-template-areas:
       "tag-2"
       "tag-1";
-    width: 100%;
+    min-width: 100%;
   }
   .project__info {
     position: initial;
