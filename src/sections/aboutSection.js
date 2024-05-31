@@ -111,7 +111,7 @@ const About = () => {
               <div className="Yellow">'2018-2021'</div>
               <div className="White"> : </div>
               <div className="Yellow">
-                'Sri Ranganathar Institute of Polytechnic - Deploma in
+                'Sri Ranganathar Institute of Polytechnic - Diploma in
                 Electrical Electronic and Engineering (DEEE)’
               </div>
               <div className="White">&#x7D;</div>
