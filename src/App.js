@@ -1,4 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import RevealContext from "../src/comps/customeHooks";
+
 import NavBar from "./comps/navbar";
 import Start from "./sections/startSection";
 import Project from "./sections/projectSection";
@@ -8,7 +11,6 @@ import Project0 from "./pages/project-0";
 import Project1 from "./pages/project-1";
 import Project2 from "./pages/project-2";
 import Project3 from "./pages/project-3";
-import { useState } from "react";
 import "./index.css";
 
 export default function App() {
@@ -37,7 +39,9 @@ const Main = () => {
       <span class="block-reveal__block-2"></span>
       <NavBar />
       <Start />
-      <Project setreveal={setreveal} reveal={reveal} />
+      <RevealContext.Provider value={{ reveal, setreveal }}>
+        <Project />
+      </RevealContext.Provider>
       <About />
       <Contact />
     </main>

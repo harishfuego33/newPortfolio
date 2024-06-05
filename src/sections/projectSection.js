@@ -1,6 +1,7 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-const Project = ({ setreveal, reveal }) => {
+import RevealContext from "../comps/customeHooks";
+const Project = () => {
   const props = [
     {
       index: 0,
@@ -32,9 +33,9 @@ const Project = ({ setreveal, reveal }) => {
     },
   ];
 
-  return <Section props={props} setreveal={setreveal} reveal={reveal} />;
+  return <Section props={props} />;
 };
-const Section = ({ props, setreveal, reveal }) => {
+const Section = ({ props }) => {
   return (
     <section className={`flex justify-center project__section `} id="Project">
       <div className="row w-100 gap-2">
@@ -56,8 +57,6 @@ const Section = ({ props, setreveal, reveal }) => {
               title={props.title}
               webp={props.webp}
               to={props.to}
-              setreveal={setreveal}
-              reveal={reveal}
             />
           ))}
         </div>
@@ -74,11 +73,10 @@ const Box = ({
   title,
   webp,
   to, // Default fullPageListening value
-  setreveal,
-  reveal,
 }) => {
   const [active, setActive] = useState(false);
   const navgate = useNavigate();
+  const { reveal, setreveal } = useContext(RevealContext);
   function hold() {
     setreveal(!reveal);
     setTimeout(() => {
