@@ -41,7 +41,7 @@ const Start = () => {
                 alt="mouse"
                 className="mouse-icon"
               />
-              <p className="scoll">SCROLL</p>
+              <p className="scroll">SCROLL</p>
             </a>
             <div className="ellipse"></div>
           </div>
@@ -78,7 +78,7 @@ const Start = () => {
           >
             <span class="block-reveal__block"></span>
             <span className="intro__friend block-reveal__text">
-              i am your <em className="ff-satcify">friendly</em> neighbourhood
+              i am your <em className="ff-satcify">friendly</em> neighborhood
               front end developer
             </span>
           </div>

@@ -322,7 +322,7 @@ body,
   width: 2.5rem;
   height: 2.5rem;
 }
-.scoll {
+.scroll {
   position: absolute;
   font-family: "Roboto Condensed";
   transform: rotate(-90deg) translate(-25px, -18px);
@@ -330,8 +330,8 @@ body,
   z-index: 3;
   font-size: 1.6rem;
 }
-.scoll:active,
-.scoll:link {
+.scroll:active,
+.scroll:link {
   color: var(--primary);
 }
 .scroll-box:hover {
@@ -450,7 +450,7 @@ body,
 .ellipse.alt {
   top: 4rem;
 }
-.Poject-tag {
+.Project-tag {
   display: block;
   font-family: "Roboto Condensed";
   color: #727272;
@@ -465,17 +465,22 @@ body,
 .grid {
   display: grid;
   grid-template-columns: 0.1fr repeat(2, 1fr) 0.1fr;
-  grid-template-rows: repeat(4, fit-content);
+  /* grid-template-rows: repeat(4, fit-content); */
   row-gap: 3rem;
   grid-template-areas:
-    ". project-1 . ."
-    ". . project-2 ."
-    ". project-3 . ."
-    ". . project-4 .";
+    ". project-0 . ."
+    ". . project-1 ."
+    ". project-2 . ."
+    ". . project-3 ."
+    ". project-4 . .";
+
   width: 100%;
   margin-top: 1rem;
   margin-bottom: 4rem;
   align-self: flex-start;
+}
+.project-0 {
+  grid-area: project-0;
 }
 .project-1 {
   grid-area: project-1;
@@ -882,7 +887,7 @@ body,
   }
 }
 @keyframes block-rev-block-2 {
-  0% {
+  block-reveal-text 0% {
     transform: translateX(calc(100% + 1px));
   }
 

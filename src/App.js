@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import RevealContext from "../src/comps/customeHooks";
-
 import NavBar from "./comps/navbar";
 import Start from "./sections/startSection";
 import Project from "./sections/projectSection";
@@ -11,6 +10,7 @@ import Project0 from "./pages/project-0";
 import Project1 from "./pages/project-1";
 import Project2 from "./pages/project-2";
 import Project3 from "./pages/project-3";
+import Project4 from "./pages/project-4";
 import "./index.css";
 
 export default function App() {
@@ -23,13 +23,14 @@ export default function App() {
           <Route path="project-1/" element={<Project1 />} />
           <Route path="project-2/" element={<Project2 />} />
           <Route path="project-3/" element={<Project3 />} />
+          <Route path="project-4/" element={<Project4 />} />
         </Routes>
       </BrowserRouter>
     </>
   );
 }
 const Main = () => {
-  const [reveal, setreveal] = useState(false);
+  const [reveal, setReveal] = useState(false);
   return (
     <main
       className={`portfolio__main block-reveal  ${
@@ -39,7 +40,7 @@ const Main = () => {
       <span class="block-reveal__block-2"></span>
       <NavBar />
       <Start />
-      <RevealContext.Provider value={{ reveal, setreveal }}>
+      <RevealContext.Provider value={{ reveal, setReveal }}>
         <Project />
       </RevealContext.Provider>
       <About />

@@ -5,31 +5,38 @@ const Project = () => {
   const props = [
     {
       index: 0,
-      class: "project-1",
+      class: `project-0`,
       title: "SUSPICIOUS URL DETECTOR",
       webp: "./assets/project-0.webp",
       to: "/project-0",
     },
     {
       index: 1,
-      class: "project-2",
+      class: `project-1`,
       title: " EXPLORE THE SPACE",
       webp: "./assets/project-1.webp",
       to: "/project-1",
     },
     {
       index: 2,
-      class: "project-3",
-      title: "NATUOR FOR TOUR",
+      class: `project-2`,
+      title: "NATOUR FOR TOUR",
       webp: "./assets/project-2.webp",
       to: "/project-2",
     },
     {
       index: 3,
-      class: "project-4",
+      class: `project-3`,
       title: " AI BASED CLOUD BLOGGING",
       webp: "./assets/project-3.webp",
       to: "/project-3",
+    },
+    {
+      index: 4,
+      class: `project-4`,
+      title: "VELS FARMS",
+      webp: "./assets/project-4.webp",
+      to: "/project-4",
     },
   ];
 
@@ -43,7 +50,7 @@ const Section = ({ props }) => {
           <div className="timeline alt">
             <div className="ellipse alt"></div>
           </div>
-          <p className="Poject-tag opa-1">
+          <p className="Project-tag opa-1">
             Project<span>&#47;&gt;</span>
           </p>
           <h4 className="project">Selected web projects...</h4>
@@ -75,12 +82,12 @@ const Box = ({
   to, // Default fullPageListening value
 }) => {
   const [active, setActive] = useState(false);
-  const navgate = useNavigate();
-  const { reveal, setreveal } = useContext(RevealContext);
+  const navigate = useNavigate();
+  const { reveal, setReveal } = useContext(RevealContext);
   function hold() {
-    setreveal(!reveal);
+    setReveal(!reveal);
     setTimeout(() => {
-      navgate(to);
+      navigate(to);
     }, 1000);
   }
   const boxRef = useRef(null);

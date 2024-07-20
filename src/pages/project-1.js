@@ -1,14 +1,14 @@
 import ImageBox from "../comps/imgBox";
 import ProjectInfo from "../comps/projectInfo";
 const imgList = [
-  "./assets/imageGalary/project-1/img-1.webp",
-  "./assets/imageGalary/project-1/img-2.webp",
-  "./assets/imageGalary/project-1/img-3.webp",
-  "./assets/imageGalary/project-1/img-4.webp",
+  "./assets/imageGallery/project-1/img-1.webp",
+  "./assets/imageGallery/project-1/img-2.webp",
+  "./assets/imageGallery/project-1/img-3.webp",
+  "./assets/imageGallery/project-1/img-4.webp",
 ];
 const projectInfo = {
   title: "EXPLORE THE SPACE",
-  techs: "#Design, #UX, #React.js, #SASS ,Responsive layout",
+  techs: "#Design, #UX, #React.js, #SASS ,#Responsive layout",
   description:
     "look for space tour , it gives you the best experience of space tour.It gives information about the planets and the stars.",
   link: "https://front-end-space-tour.vercel.app/",
