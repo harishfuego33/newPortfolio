@@ -595,7 +595,7 @@ body,
 .Grey {
   color: grey;
 }
-.voilet {
+.violet {
   color: #ab9df2;
 }
 .Yellow {
@@ -611,7 +611,7 @@ body,
 .Red,
 .Cyan,
 .Grey,
-.voilet,
+.violet,
 .Yellow,
 .dot,
 .comment {

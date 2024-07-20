@@ -34,7 +34,7 @@ const About = () => {
               <div className="Cyan">
                 this<div className="White">.</div>
               </div>
-              <div className="voilet">name</div>
+              <div className="violet">name</div>
               <div className="Red"> = </div>
               <div className="Yellow">‘harish kumar’</div>
               <div className="Grey">;</div>
@@ -44,7 +44,7 @@ const About = () => {
               <div className="Cyan">
                 this<div className="White">.</div>
               </div>
-              <div className="voilet">birthDate</div>
+              <div className="violet">birthDate</div>
               <div className="Red"> = </div>
               <div className="Yellow">‘10 April 2003’</div>
               <div className="Grey">;</div>
@@ -54,7 +54,7 @@ const About = () => {
               <div className="Cyan">
                 this<div className="White">.</div>
               </div>
-              <div className="voilet">mail</div>
+              <div className="violet">mail</div>
               <div className="Red"> = </div>
               <div className="Yellow">‘harishsugumar33@gmail.com’</div>
               <div className="Grey">;</div>
