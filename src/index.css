@@ -513,7 +513,7 @@ body,
 .img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 .project-info {
   position: absolute;
@@ -972,9 +972,10 @@ body,
   .grid {
     grid-template-columns: 0.1fr 0.1fr 1fr;
     grid-template-areas:
-      ". .project-1  "
-      ". . project-2 "
-      ". . project-3  "
+      ". .project-0  "
+      ". . project-1 "
+      ". . project-2  "
+      ". . project-3 "
       ". . project-4 ";
     place-items: center;
   }
@@ -984,7 +985,7 @@ body,
     transform: none !important;
   }
   .project__section {
-    height: 100rem;
+    /* height: auto; */
     min-height: auto;
   }
   .about__section {
@@ -1043,9 +1044,6 @@ body,
     width: 30rem;
     height: 13rem;
     transform: none !important;
-  }
-  .img-box {
-    filter: initial;
   }
   .code {
     font-size: 1.6rem;
