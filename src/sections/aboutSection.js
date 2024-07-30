@@ -6,7 +6,7 @@ const About = () => {
           <div className="timeline alt">
             <div className="ellipse alt"></div>
           </div>
-          <p className="Poject-tag opa-1">
+          <p className="Project-tag opa-1">
             About<span>&#47;&gt;</span>
           </p>
           <div className="codewrap">
