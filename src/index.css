@@ -876,6 +876,10 @@ body,
 .project__nav-link:hover > .toolkit {
   opacity: 1;
 }
+::selection {
+  background-color:var(--blue);
+  color:white;
+}
 
 @keyframes block-rev-block {
   0% {
