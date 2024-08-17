@@ -876,7 +876,9 @@ body,
 .project__nav-link:hover > .toolkit {
   opacity: 1;
 }
-
+::selection {
+  background-color: var(--primary);
+}
 @keyframes block-rev-block {
   0% {
     transform: translateX(-100%);
