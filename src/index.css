@@ -882,8 +882,15 @@ body,
   opacity: 1;
 }
 ::selection {
+<<<<<<< HEAD
   background-color: var(--primary);
 }
+=======
+  background-color:var(--blue);
+  color:white;
+}
+
+>>>>>>> a27758a3a69bad5936c870131d3ba07539298050
 @keyframes block-rev-block {
   from {
     transform: translateX(-100%);
