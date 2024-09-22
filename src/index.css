@@ -882,15 +882,14 @@ body,
   opacity: 1;
 }
 ::selection {
-<<<<<<< HEAD
-  background-color: var(--primary);
+  /* background-color: var(--primary); */
+  background-color: var(--blue);
+  color: white;
 }
-=======
-  background-color:var(--blue);
-  color:white;
+.user-selection-none {
+  user-select: none;
 }
 
->>>>>>> a27758a3a69bad5936c870131d3ba07539298050
 @keyframes block-rev-block {
   from {
     transform: translateX(-100%);
@@ -997,6 +996,7 @@ body,
     width: 47rem;
     height: 19rem;
     transform: none !important;
+    user-select: none;
   }
   .project__section {
     /* height: auto; */

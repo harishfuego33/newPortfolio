@@ -169,14 +169,22 @@ const Box = ({
         }`}
       >
         <span class="block-reveal__block-1"></span>
-        <img className="img" src={webp} alt="project-img" type="image/webp" />
+        <img
+          className="img"
+          src={webp}
+          alt="project-img"
+          type="image/webp"
+          style={{ userSelect: "none" }}
+        />
       </div>
       <div className="project-info">
         <div
           className={`block-reveal ${active ? "block-reveal--active  " : ""}`}
         >
           <span class="block-reveal__block-1"></span>
-          <h1 className="project-title">{title}</h1>
+          <h1 className="project-title" style={{ userSelect: "none" }}>
+            {title}
+          </h1>
         </div>
         <div className="project-line"></div>
         <div
@@ -186,8 +194,12 @@ const Box = ({
             class="block-reveal__block-1"
             style={{ background: "#8036e7" }}
           ></span>
-          <h1 className="project-00">0{index}</h1>
-          <div className="project-arrow ">&rarr;</div>
+          <h1 className="project-00" style={{ userSelect: "none" }}>
+            0{index}
+          </h1>
+          <div className="project-arrow " style={{ userSelect: "none" }}>
+            &rarr;
+          </div>
         </div>
       </div>
     </NavLink>
