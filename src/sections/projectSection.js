@@ -1,6 +1,8 @@
 import { useRef, useEffect, useState, useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import RevealContext from "../comps/customeHooks";
+import Tilt from 'react-parallax-tilt';
+
 const Project = () => {
   const props = [
     {
@@ -72,8 +74,6 @@ const Section = ({ props }) => {
   );
 };
 const Box = ({
-  settings = { max: 25, perspective: 800, scale: 1, axis: null }, // Default settings
-  reverse = 1, // Default reverse value
   fullPageListening = false,
   atr,
   index,
@@ -90,119 +90,62 @@ const Box = ({
       navigate(to);
     }, 1000);
   }
-  const boxRef = useRef(null);
-  useEffect(() => {
-    const box = boxRef.current;
-    function calculateTilt(event) {
-      const rect = box.getBoundingClientRect();
-      const width = box.offsetWidth;
-      const height = box.offsetHeight;
-      const left = rect.left;
-      const top = rect.top;
-      let t, e;
-      if (fullPageListening) {
-        t = event.clientX / window.innerWidth;
-        e = event.clientY / window.innerHeight;
-      } else {
-        t = (event.clientX - left) / width;
-        e = (event.clientY - top) / height;
-      }
-      t = Math.min(Math.max(t, 0), 1);
-      e = Math.min(Math.max(e, 0), 1);
-      const tiltX = (reverse * (settings.max - t * settings.max * 2)).toFixed(
-        2
-      );
-      const tiltY = (reverse * (e * settings.max * 2 - settings.max)).toFixed(
-        2
-      );
-      return {
-        tiltX,
-        tiltY,
-        percentageX: (100 * t).toFixed(2),
-        percentageY: (100 * e).toFixed(2),
-        angle:
-          Math.atan2(
-            event.clientX - (left + width / 2),
-            -(event.clientY - (top + height / 2))
-          ) *
-          (180 / Math.PI),
-      };
-    }
-    function mousemove(event) {
-      const t = calculateTilt(event);
-      box.style.transform = `
-                        perspective(${settings.perspective}px) 
-                        rotateX(${settings.axis === "x" ? 0 : t.tiltY}deg) 
-                        rotateY(${settings.axis === "y" ? 0 : t.tiltX}deg) 
-                        scale3d(${settings.scale}, ${settings.scale}, ${
-        settings.scale
-      })
-                    `;
-    }
-    function mouseout(event) {
-      box.style.transform = `
-                        perspective(${settings.perspective}px) 
-                        rotateX(0deg) 
-                        rotateY(0deg) 
-                        scale3d(${settings.scale}, ${settings.scale}, ${settings.scale})
-                    `;
-    }
-    box.addEventListener("mousemove", mousemove);
-    box.addEventListener("mouseleave", mouseout);
-    return () => {
-      box.removeEventListener("mousemove", mousemove);
-      box.removeEventListener("mouseleave", mouseout);
-    };
-  }, [settings, reverse, fullPageListening]);
+  const nexProject = (e)=>{
+    e.stopPropagation();
+    hold();
+    setActive(!active);
+  }
   return (
-    <NavLink
-      className={`box ${atr}`}
-      ref={boxRef}
-      onClick={(e) => {
-        hold();
-        setActive(!active);
-      }}
+    <div className={`box ${atr}`}
+    onClick={nexProject}
     >
-      <div
-        className={`img-box block-reveal ${
-          active === true ? "block-reveal--active" : ""
-        }`}
-      >
-        <span class="block-reveal__block-1"></span>
-        <img
-          className="img"
-          src={webp}
-          alt="project-img"
-          type="image/webp"
-          style={{ userSelect: "none" }}
-        />
-      </div>
-      <div className="project-info">
-        <div
-          className={`block-reveal ${active ? "block-reveal--active  " : ""}`}
+      <Tilt className={`box ${atr}`} >
+        <Tilt
+          tiltEnable={false}
+          glareEnable={true}
+          glareColor="#ffffff"
+          glareMaxOpacity={0.3}
+          glarePosition="all" 
+          className={`img-box block-reveal ${
+            active === true ? "block-reveal--active" : ""
+          }`}
         >
-          <span class="block-reveal__block-1"></span>
-          <h1 className="project-title" style={{ userSelect: "none" }}>
-            {title}
-          </h1>
-        </div>
-        <div className="project-line"></div>
-        <div
-          className={`block-reveal ${active ? "block-reveal--active  " : ""}`}
-        >
-          <span
-            class="block-reveal__block-1"
-            style={{ background: "#8036e7" }}
-          ></span>
-          <h1 className="project-00" style={{ userSelect: "none" }}>
-            0{index}
-          </h1>
-          <div className="project-arrow " style={{ userSelect: "none" }}>
-            &rarr;
+          <span className="block-reveal__block-1"></span>
+          <img
+            className="img"
+            src={webp}
+            alt="project-img"
+            type="image/webp"
+            style={{ userSelect: "none" }}
+          />
+        </Tilt>
+        <div className="project-info">
+          <div
+            className={`block-reveal ${active ? "block-reveal--active  " : ""}`}
+          >
+            <span className="block-reveal__block-1"></span>
+            <h1 className="project-title" style={{ userSelect: "none" }}>
+              {title}
+            </h1>
+          </div>
+          <div className="project-line"></div>
+          <div
+            className={`block-reveal ${active ? "block-reveal--active  " : ""}`}
+          >
+            <span
+              className="block-reveal__block-1"
+              style={{ background: "#8036e7" }}
+            ></span>
+            <h1 className="project-00" style={{ userSelect: "none" }}>
+              0{index}
+            </h1>
+            <div className="project-arrow " style={{ userSelect: "none" }}>
+              &rarr;
+            </div>
           </div>
         </div>
-      </div>
-    </NavLink>
+      </Tilt>
+    </div>
   );
 };
 export default Project;

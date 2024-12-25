@@ -51,7 +51,7 @@ const Start = () => {
             }`}
           >
             <span
-              class="block-reveal__block"
+              className="block-reveal__block"
               style={{ background: "white" }}
             ></span>
             <span className="start block-reveal__text">
@@ -64,7 +64,7 @@ const Start = () => {
               text1 === true ? "block-reveal--active " : ""
             }`}
           >
-            <span class="block-reveal__block"></span>
+            <span className="block-reveal__block"></span>
             <span className="intro__hi block-reveal__text">
               Hi, my name is{" "}
               <strong className="color-purple">Harish Kumar</strong>
@@ -76,7 +76,7 @@ const Start = () => {
               text2 === true ? "block-reveal--active  " : ""
             }`}
           >
-            <span class="block-reveal__block"></span>
+            <span className="block-reveal__block"></span>
             <span className="intro__friend block-reveal__text">
               i am your <em className="ff-satcify">friendly</em> neighborhood
               front end developer
@@ -92,7 +92,7 @@ const Start = () => {
             }`}
           >
             <span
-              class="block-reveal__block "
+              className="block-reveal__block "
               style={{ background: "white" }}
             ></span>
             <span className="into__letme block-reveal__text">

@@ -37,7 +37,7 @@ const Main = () => {
         reveal ? "block-reveal--active-1" : ""
       }`}
     >
-      <span class="block-reveal__block-2"></span>
+      <span className="block-reveal__block-2"></span>
       <NavBar />
       <Start />
       <RevealContext.Provider value={{ reveal, setReveal }}>

@@ -520,7 +520,7 @@ body,
   bottom: 3rem;
   width: 12rem;
   height: 12rem;
-  transform: translateZ(5rem); /*This will now have an effect */
+  transform: translateZ(5rem); 
   /* outline: var(--blue) solid 10px;
   padding: 10px; */
 }
@@ -551,7 +551,7 @@ body,
 }
 .box:hover .img-box {
   transform: translateZ(12px);
-  filter: initial;
+  /* filter: brightness(10%); */
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
 }
 .box:hover .project-arrow {
