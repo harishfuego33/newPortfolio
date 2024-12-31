@@ -75,9 +75,9 @@ const About = () => {
             <div data-line-nr="11" className="code">
               <div className="dot">······</div>
               <div className="White">&#x7B;</div>
-              <div className="Yellow">'2024-now'</div>
+              <div className="Yellow">'SEP 2024 - now'</div>
               <div className="White"> : </div>
-              <div className="Yellow">’Looking from placement’</div>{" "}
+              <div className="Yellow">’APSI TECHNOLOGY’</div>{" "}
               <div className="White">&#x7D;</div>
             </div>
             <div data-line-nr="12" className="code">

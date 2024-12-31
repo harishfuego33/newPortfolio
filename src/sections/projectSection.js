@@ -1,5 +1,5 @@
-import { useRef, useEffect, useState, useContext } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import RevealContext from "../comps/customeHooks";
 import Tilt from 'react-parallax-tilt';
 
@@ -17,28 +17,24 @@ const Project = () => {
       class: `project-1`,
       title: " EXPLORE THE SPACE",
       webp: "./assets/project-1.webp",
-      to: "/project-1",
     },
     {
       index: 2,
       class: `project-2`,
       title: "NATOUR FOR TOUR",
       webp: "./assets/project-2.webp",
-      to: "/project-2",
     },
     {
       index: 3,
       class: `project-3`,
       title: " AI BASED CLOUD BLOGGING",
       webp: "./assets/project-3.webp",
-      to: "/project-3",
     },
     {
       index: 4,
       class: `project-4`,
       title: "VELS FARMS",
       webp: "./assets/project-4.webp",
-      to: "/project-4",
     },
   ];
 
@@ -65,7 +61,6 @@ const Section = ({ props }) => {
               index={props.index}
               title={props.title}
               webp={props.webp}
-              to={props.to}
             />
           ))}
         </div>
@@ -74,12 +69,10 @@ const Section = ({ props }) => {
   );
 };
 const Box = ({
-  fullPageListening = false,
   atr,
   index,
   title,
-  webp,
-  to, // Default fullPageListening value
+  webp
 }) => {
   const [active, setActive] = useState(false);
   const navigate = useNavigate();
@@ -87,7 +80,7 @@ const Box = ({
   function hold() {
     setReveal(!reveal);
     setTimeout(() => {
-      navigate(to);
+      navigate("/project/" + index);
     }, 1000);
   }
   const nexProject = (e)=>{
