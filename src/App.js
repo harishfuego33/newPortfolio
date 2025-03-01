@@ -16,9 +16,9 @@ export default function App() {
     <>
       <AnimatedCursor
         innerSize={8}
-        outerSize={20}
+        outerSize={30}
         innerScale={1}
-        outerScale={3}
+        outerScale={2.5}
         outerAlpha={0}
         hasBlendMode={true}
         innerStyle={{

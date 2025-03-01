@@ -2,10 +2,14 @@ import { useState } from "react";
 
 function NavBar() {
   const [active, setActive] = useState(false);
+  const navigateToHome = (e) => {
+    window.scrollTo(0, 0);
+    
+  } 
   return (
     <>
       <nav className=" flex align-center navbar-box">
-        <div className=" flex align-center ff-inter">
+        <div className=" flex align-center ff-inter" onClick={navigateToHome}>
           <span className="lessthan">&#8249;</span>
           <h1 className="heading">HarisH</h1>
           <span className="lessthan">&#47;&#8250;</span>
