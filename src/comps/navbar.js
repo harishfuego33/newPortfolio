@@ -9,7 +9,7 @@ function NavBar() {
   return (
     <>
       <nav className=" flex align-center navbar-box">
-        <div className=" flex align-center ff-inter" onClick={navigateToHome}>
+        <div className=" flex align-center ff-inter" onClick={navigateToHome} id="logo-primary">
           <span className="lessthan">&#8249;</span>
           <h1 className="heading">HarisH</h1>
           <span className="lessthan">&#47;&#8250;</span>

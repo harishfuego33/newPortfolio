@@ -32,10 +32,11 @@ export default function App() {
           '.box',
           '.nav-link',
           '.navbar__center-option',
-          ".code",
-          "a",
-          ".resume-btn",
+          '.code',
+          'a',
+          '.resume-btn',
           '.btn-2',
+          '#logo-primary',
           {
             target: '.custom',
             options: {
