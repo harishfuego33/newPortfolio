@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 :root {
-  --blue: #445ef2;
+  --blue: rgb(68, 94, 242);
   --primary: #8036e7;
   --lite-gray: #988e9f;
   --web-background: #181325;
@@ -1064,7 +1064,7 @@ body,
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1380px) {
    .w-100 {
     width: 60% !important;
   }

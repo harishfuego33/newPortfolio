@@ -143,6 +143,10 @@ const About = () => {
               <div className="Yellow">'C++'</div>
               <div className="White">,</div>
               <div className="Yellow">'MYSQL'</div>
+              <div className="White">,</div>
+              <div className="Yellow">'NODE'</div>
+              <div className="White">,</div>                 
+              <div className="Yellow">'EXPRESS.JS'</div>
               <div className="blink">|</div>
               <div className="White"> ]</div>
             </div>
