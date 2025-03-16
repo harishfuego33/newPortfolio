@@ -28,6 +28,7 @@ body,
 #root {
   min-height: 100vh;
   width: 100%;
+  transition: all 0.3s;
 }
 
 /* utility classes */

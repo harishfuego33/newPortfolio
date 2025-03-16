@@ -8,13 +8,24 @@ import About from "./sections/aboutSection";
 import Contact from "./sections/contactSection";
 import Project from "./pages/project";
 import AnimatedCursor from "react-animated-cursor"
+import { useEffect } from "react";
 
 import "./index.css";
 
+
+
+
 export default function App() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setWindowWidth(window.innerWidth)
+    })
+  }, [])
   return (
     <>
-      <AnimatedCursor
+      { windowWidth > 860 ?
+        <AnimatedCursor
         innerSize={8}
         outerSize={30}
         innerScale={1}
@@ -49,7 +60,7 @@ export default function App() {
             }
           }
         ]}
-    />
+    /> : null }
       <BrowserRouter>
         <Routes>
           <Route index element={<Main />} />
