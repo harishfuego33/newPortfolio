@@ -521,7 +521,7 @@ body,
   bottom: 3rem;
   width: 12rem;
   height: 12rem;
-  transform: translateZ(5rem); 
+  transform: translateZ(5rem);
   /* outline: var(--blue) solid 10px;
   padding: 10px; */
 }
@@ -689,12 +689,13 @@ body,
   gap: 1rem;
 }
 .link:active,
-.link:visited {
+.link:link {
   color: var(--primary);
 }
 .link:hover,
-.link:link {
+.link:visited {
   color: var(--blue);
+  text-decoration: underline;
 }
 .resume {
   width: 0;
@@ -1066,7 +1067,7 @@ body,
 }
 
 @media (min-width: 1380px) {
-   .w-100 {
+  .w-100 {
     width: 60% !important;
   }
 }

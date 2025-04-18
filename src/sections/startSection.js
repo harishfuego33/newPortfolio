@@ -78,7 +78,7 @@ const Start = () => {
           >
             <span className="block-reveal__block"></span>
             <span className="intro__friend block-reveal__text">
-              i am your <em className="ff-satcify">friendly</em> neighborhood
+              I am your <em className="ff-satcify">friendly</em> neighborhood
               front end developer
             </span>
           </div>

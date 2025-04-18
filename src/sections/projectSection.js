@@ -1,7 +1,9 @@
-import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import RevealContext from "../comps/customeHooks";
-import Tilt from 'react-parallax-tilt';
+import { useRef, useEffect } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import Box from "../comps/box";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Project = () => {
   const props = [
@@ -41,6 +43,31 @@ const Project = () => {
   return <Section props={props} />;
 };
 const Section = ({ props }) => {
+  const boxRef = useRef([]);
+  useEffect(() => {
+    const boxes = gsap.utils.toArray(boxRef.current);
+    boxes.forEach((box, index) => {
+      gsap.fromTo(
+        box,
+        { opacity: 0, x: -50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: box,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+    ScrollTrigger.refresh();
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
   return (
     <section className={`flex justify-center project__section `} id="Project">
       <div className="row w-100 gap-2">
@@ -53,14 +80,15 @@ const Section = ({ props }) => {
           </p>
           <h4 className="project">Selected web projects...</h4>
         </div>
-        <div className="grid ">
-          {props.map((props) => (
+        <div className="grid">
+          {props.map((props, index) => (
             <Box
+              key={index}
               atr={props.class}
-              key={props.index}
               index={props.index}
               title={props.title}
               webp={props.webp}
+              ref={(el) => (boxRef.current[index] = el)}
             />
           ))}
         </div>
@@ -68,77 +96,5 @@ const Section = ({ props }) => {
     </section>
   );
 };
-const Box = ({
-  atr,
-  index,
-  title,
-  webp
-}) => {
-  const [active, setActive] = useState(false);
-  const navigate = useNavigate();
-  const { reveal, setReveal } = useContext(RevealContext);
-  function hold() {
-    setReveal(!reveal);
-    setTimeout(() => {
-      navigate("/project/" + index);
-    }, 1000);
-  }
-  const nexProject = (e)=>{
-    e.stopPropagation();
-    hold();
-    setActive(!active);
-  }
-  return (
-    <div className={`box ${atr}`}
-    onClick={nexProject}
-    >
-      <Tilt className={`box ${atr}`} >
-        <Tilt
-          tiltEnable={false}
-          glareEnable={true}
-          glareColor="#ffffff"
-          glareMaxOpacity={0.3}
-          glarePosition="all" 
-          className={`img-box block-reveal ${
-            active === true ? "block-reveal--active" : ""
-          }`}
-        >
-          <span className="block-reveal__block-1"></span>
-          <img
-            className="img"
-            src={webp}
-            alt="project-img"
-            type="image/webp"
-            style={{ userSelect: "none" }}
-          />
-        </Tilt>
-        <div className="project-info">
-          <div
-            className={`block-reveal ${active ? "block-reveal--active  " : ""}`}
-          >
-            <span className="block-reveal__block-1"></span>
-            <h1 className="project-title" style={{ userSelect: "none" }}>
-              {title}
-            </h1>
-          </div>
-          <div className="project-line"></div>
-          <div
-            className={`block-reveal ${active ? "block-reveal--active  " : ""}`}
-          >
-            <span
-              className="block-reveal__block-1"
-              style={{ background: "#8036e7" }}
-            ></span>
-            <h1 className="project-00" style={{ userSelect: "none" }}>
-              0{index}
-            </h1>
-            <div className="project-arrow " style={{ userSelect: "none" }}>
-              &rarr;
-            </div>
-          </div>
-        </div>
-      </Tilt>
-    </div>
-  );
-};
+
 export default Project;
