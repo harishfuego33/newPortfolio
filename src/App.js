@@ -30,7 +30,8 @@ export default function App() {
           "https://new-suspicious-url-detector.onrender.com/api/v1/view/incrementByOne",
           {}
         );
-        if (response.data && response.data.success) {
+        console.log(response.data);
+        if (response.data && response.data.status) {
           localStorage.setItem(viewUpdate.viewUpdateKey, "true");
         }
       }
