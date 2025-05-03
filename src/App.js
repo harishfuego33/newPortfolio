@@ -9,6 +9,7 @@ import Contact from "./sections/contactSection";
 import Project from "./pages/project";
 import AnimatedCursor from "react-animated-cursor";
 import { useEffect } from "react";
+import axios from "axios";
 
 import "./index.css";
 
@@ -19,6 +20,28 @@ export default function App() {
       setWindowWidth(window.innerWidth);
     });
   }, []);
+  const viewUpdate = {
+    viewUpdateKey: "ViewUpdated",
+  };
+  const increaseViewCount = async () => {
+    try {
+      if (!localStorage.getItem(viewUpdate.viewUpdateKey)) {
+        const response = await axios.post(
+          "https://new-suspicious-url-detector.onrender.com/api/v1/view/incrementByOne",
+          {}
+        );
+        if (response.data && response.data.success) {
+          localStorage.setItem(viewUpdate.viewUpdateKey, "true");
+        }
+      }
+    } catch (error) {
+      console.error("Error updating view count:", error);
+    }
+  };
+  useEffect(() => {
+    increaseViewCount();
+  }, []);
+
   return (
     <>
       {windowWidth > 860 ? (

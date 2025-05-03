@@ -1,5 +1,6 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Box from "../comps/box";
 
@@ -44,7 +45,7 @@ const Project = () => {
 };
 const Section = ({ props }) => {
   const boxRef = useRef([]);
-  useEffect(() => {
+  useGSAP(() => {
     const boxes = gsap.utils.toArray(boxRef.current);
     boxes.forEach((box, index) => {
       gsap.fromTo(
@@ -64,10 +65,7 @@ const Section = ({ props }) => {
       );
     });
     ScrollTrigger.refresh();
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
+  }, {});
   return (
     <section className={`flex justify-center project__section `} id="Project">
       <div className="row w-100 gap-2">
