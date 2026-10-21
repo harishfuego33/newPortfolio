@@ -710,7 +710,11 @@ body,
   border: none;
   border-radius: 50px;
   color: hsla(0, 0%, 100%, 0.9);
-  font-family: Roboto Mono, Courier New, Courier, monospace !important;
+  font-family:
+    Roboto Mono,
+    Courier New,
+    Courier,
+    monospace !important;
   font-size: 20px;
   line-height: 1;
   padding: 17px 35px;
@@ -718,7 +722,8 @@ body,
   text-align: center;
   text-transform: uppercase;
   transform: scaleX(1);
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+  transition:
+    transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
     background-position 3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 .resume-btn .btn-2 {
@@ -727,7 +732,8 @@ body,
   opacity: 0.8;
   position: absolute;
   transform: scale3d(0.9, 0.9, 1);
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+  transition:
+    transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
     filter 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
     bottom 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
     background-position 3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
@@ -736,7 +742,8 @@ body,
 }
 .resume-btn {
   margin: 30px 0;
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+  transition:
+    transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
     bottom 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
     background-position 3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
@@ -788,6 +795,7 @@ body,
   grid-area: tag-2;
   position: fixed;
   top: 0;
+  right: 0;
   width: 35%;
   height: 100vh;
   padding: 4rem;
