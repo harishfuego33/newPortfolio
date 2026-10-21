@@ -28,7 +28,7 @@ export default function App() {
       if (!localStorage.getItem(viewUpdate.viewUpdateKey)) {
         const response = await axios.post(
           "https://new-suspicious-url-detector.onrender.com/api/v1/view/incrementByOne",
-          {}
+          {},
         );
         if (response.data && response.data.status) {
           localStorage.setItem(viewUpdate.viewUpdateKey, "true");
@@ -40,6 +40,7 @@ export default function App() {
   };
   useEffect(() => {
     increaseViewCount();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
